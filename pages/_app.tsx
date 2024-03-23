@@ -1,3 +1,5 @@
+import '@/styles/globals.scss';
+import {Header} from '@/components/header.component';
 import type {AppProps} from 'next/app';
 
 /**
@@ -5,5 +7,10 @@ import type {AppProps} from 'next/app';
  * @return {JSX.Element} The App component.
  */
 export default function App({Component, pageProps}: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <Header/>
+      <Component {...pageProps} />
+    </>
+  );
 }
