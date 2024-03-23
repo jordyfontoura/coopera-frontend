@@ -5,7 +5,7 @@ import {Html, Head, Main, NextScript} from 'next/document';
  * to augment your application's <html> and <body> tags.
  * @return {JSX.Element} The Document component.
  */
-export default function Document() {
+export default function Document(): JSX.Element {
   return (
     <Html lang="en">
       <Head />
