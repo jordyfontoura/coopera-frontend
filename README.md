@@ -1,40 +1,58 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center">
+  <a href="https://www.cooperaesportes.com.br" target="blank"><img src="https://raw.githubusercontent.com/jordyfontoura/coopera-frontend/main/public/logo.svg" width="120" alt="Coopera Esportes" /></a>
+</p>
 
-## Getting Started
+# Coopera Esportes
 
-First, run the development server:
+Bem-vindo ao repositório da **Coopera Esportes**! Este projeto é uma iniciativa da Organização Não Governamental (ONG) sem fins lucrativos **Coopera Esportes**, que visa contribuir para o desenvolvimento integral de adolescentes por meio do apoio à prática esportiva e à educação.
+
+Acreditamos no poder do esporte e da educação como formas de integração social, e este projeto em **Next.js** é parte de nossos esforços para alcançar esse objetivo.
+
+## Sobre o Projeto
+
+O projeto em Next.js da Coopera Esportes é uma plataforma web desenvolvida para fornecer informações sobre a ONG, seus programas, eventos, e como contribuir ou se envolver. A plataforma foi criada com foco na simplicidade, usabilidade e acessibilidade.
+
+## Instalação
+
+Para executar este projeto localmente, siga estas etapas:
+
+1. Certifique-se de ter o **Node.js (v20.11.1)** e o **npm** instalados em seu computador.
+2. Clone este repositório para o seu ambiente local.
+3. No diretório raiz do projeto, execute o seguinte comando para instalar as dependências:
+
+```bash
+npm install
+```
+
+## Uso
+Após a instalação das dependências, você pode iniciar o servidor de desenvolvimento local executando o seguinte comando:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Isso iniciará o servidor de desenvolvimento do Next.js. Você poderá acessar o projeto em seu navegador em http://localhost:3000.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Contribuição
+Agradecemos o seu interesse em contribuir para o projeto da Coopera Esportes! Utilizamos o [GitFlow](https://www.atlassian.com/br/git/tutorials/comparing-workflows/gitflow-workflow) como metodologia de trabalho. Abaixo está um diagrama para facilitar o entendimento do mesmo:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+<p align="center">
+  <img src="https://wac-cdn.atlassian.com/dam/jcr:cc0b526e-adb7-4d45-874e-9bcea9898b4a/04%20Hotfix%20branches.svg" alt="Fluxograma de branches"/>
+</p>
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- **feature/nome-da-feature**: Use esse tipo de branch para desenvolver novas funcionalidades. Quando estiver pronta, a branch será mesclada de volta para a branch de desenvolvimento.
+- **hotfix/nome-do-hotfix**: Use esse tipo de branch para corrigir bugs críticos que foram descobertos na branch de produção. Assim que o problema for resolvido, a branch será mesclada de volta para as branches de desenvolvimento e produção.
+- **release/vX.X.X**: Essas branches são criadas quando um novo release está pronto para ser implantado. Elas são usadas para preparar o código para implantação em produção. Uma vez que o release é considerado pronto, ele será mesclado na branch de produção.
+- **dev**: Essa é a branch de desenvolvimento. Todas as novas funcionalidades são mescladas nesta branch.
+- **main**: Essa é a branch de produção. Ela contém o código que está atualmente em produção.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+Antes de enviar uma pull request, por favor, certifique-se de seguir as Diretrizes de Contribuição.
 
-To learn more about Next.js, take a look at the following resources:
+## Contato
+Se você tiver alguma dúvida, sugestão ou precisar de mais informações, entre em contato conosco:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Site: [www.cooperaesportes.com.br](www.cooperaesportes.com.br)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Licença
+Este projeto está licenciado sob a [Licença MIT](LICENSE).
