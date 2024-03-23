@@ -1,11 +1,16 @@
-import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.css";
+import Head from 'next/head';
+import Image from 'next/image';
+import {Inter} from 'next/font/google';
+import styles from '@/styles/Home.module.css';
 
-const inter = Inter({ subsets: ["latin"] });
+// eslint-disable-next-line new-cap
+const inter = Inter({subsets: ['latin']});
 
-export default function Home() {
+/**
+ * The main page of the application.
+ * @return {JSX.Element} The main page of the application.
+ */
+export default function Home(): JSX.Element {
   return (
     <>
       <Head>
@@ -26,7 +31,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              By{" "}
+              By{' '}
               <Image
                 src="/vercel.svg"
                 alt="Vercel Logo"

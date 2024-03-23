@@ -1,6 +1,10 @@
-import "@/styles/globals.css";
-import type { AppProps } from "next/app";
+import '@/styles/globals.css';
+import type {AppProps} from 'next/app';
 
-export default function App({ Component, pageProps }: AppProps) {
+/**
+ * Next.js uses the App component to initialize pages.
+ * @return {JSX.Element} The App component.
+ */
+export default function App({Component, pageProps}: AppProps) {
   return <Component {...pageProps} />;
 }
