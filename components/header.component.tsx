@@ -17,7 +17,7 @@ export function Header(): JSX.Element {
           height={60}
         />
       </Link>
-      <div className={styles.nav}>
+      <nav>
         <ul>
           <li>
             <Link href="/about">Quem Somos</Link>
@@ -29,7 +29,7 @@ export function Header(): JSX.Element {
             <Link href="/contact">Contato</Link>
           </li>
         </ul>
-      </div>
+      </nav>
       <div className={styles.menuIcon}>
         <Image src="/menu.svg" alt="Ícone do menu" width={60} height={60} />
       </div>

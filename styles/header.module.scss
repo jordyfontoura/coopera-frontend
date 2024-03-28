@@ -15,7 +15,7 @@ $md-screen: 768px;
       align-items: center;
       margin-right: 40px;
     }
-    .nav {
+    nav {
       display: inline-block;
       ul {
         display: flex;
@@ -27,7 +27,6 @@ $md-screen: 768px;
             color: $primary;
             font-size: 16px;
             font-weight: bold;
-            
           }
         }
       }
@@ -37,7 +36,6 @@ $md-screen: 768px;
       color: $primary;
       align-items: center;
       cursor: pointer;
-      
     }
   }
   
@@ -50,7 +48,7 @@ $md-screen: 768px;
           height: 80px
         }
       }
-      .nav {
+      nav {
         ul {
           display: none;
         }
