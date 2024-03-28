@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from '@/styles/header.module.scss';
+import LogoIcon from '@/public/icons/logo.svg';
+import MenuIcon from '@/public/icons/menu.svg';
 
 /**
  * Header component
@@ -11,7 +13,7 @@ export function Header(): JSX.Element {
     <header className={styles.header}>
       <Link href="/" className={styles.logo}>
         <Image
-          src="/logo.svg"
+          src={LogoIcon}
           alt="Logo Coopera Esportes"
           width={60}
           height={60}
@@ -31,7 +33,7 @@ export function Header(): JSX.Element {
         </ul>
       </nav>
       <div className={styles.menuIcon}>
-        <Image src="/menu.svg" alt="Ícone do menu" width={60} height={60} />
+        <Image src={MenuIcon} alt="Ícone do menu" width={60} height={60} />
       </div>
     </header>
   );
