@@ -1,8 +1,4 @@
-$primary: #00629B;
-$secondary: #023D54;
-$primary-background: #fff;
-$sm-screen: 480px;
-$md-screen: 768px;
+@import "styles/constants.scss";
 
 .header {
     background-color: $primary-background;
