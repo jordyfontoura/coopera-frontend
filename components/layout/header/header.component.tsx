@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import styles from '@/styles/header.module.scss';
+import styles from './header.module.scss';
 import LogoIcon from '@/public/icons/logo.svg';
 import MenuIcon from '@/public/icons/menu.svg';
 

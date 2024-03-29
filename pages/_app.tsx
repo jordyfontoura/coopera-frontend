@@ -1,5 +1,5 @@
 import '@/styles/globals.scss';
-import {Header} from '@/components/header.component';
+import {Header} from '@/components/layout/header/header.component';
 import type {AppProps} from 'next/app';
 
 /**
