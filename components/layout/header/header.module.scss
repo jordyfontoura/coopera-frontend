@@ -9,7 +9,7 @@ $md-screen: 768px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 10px 80px;
+    padding: 10px 80px;
     .logo {
       display: flex;
       align-items: center;
@@ -40,7 +40,7 @@ $md-screen: 768px;
   
   @media screen and (max-width: $md-screen) {
     .header {
-      margin: 10px 24px;
+      padding: 10px 24px;
       .logo {
         img {
           width: 80px;
