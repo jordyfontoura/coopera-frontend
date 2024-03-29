@@ -4,7 +4,7 @@ import path from 'path';
 const nextConfig = {
   reactStrictMode: true,
   sassOptions: {
-    includePaths: [path.join('./', 'styles')],
+    includePaths: [path.join('./', 'styles'), path.join('./', 'components')],
   },
   output: 'standalone',
 };
