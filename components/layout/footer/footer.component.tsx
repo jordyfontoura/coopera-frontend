@@ -2,6 +2,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from './footer.module.scss';
 
+import InstagramIcon from '@/public/icons/socials/instagram.svg';
+import FacebookIcon from '@/public/icons/socials/facebook.svg';
+import GEFLogo from '@/public/icons/GEFlogo.svg';
+
 /**
  * Footer component
  * @return {JSX.Element}
@@ -21,7 +25,7 @@ export function Footer(): JSX.Element {
         <div className={styles.socials}>
           <a href="https://www.instagram.com/cooperaesportes/">
             <Image
-              src={'/icons/socials/instagram.svg'}
+              src={InstagramIcon}
               alt="Instagram"
               width={32}
               height={32}
@@ -29,7 +33,7 @@ export function Footer(): JSX.Element {
           </a>
           <a href="https://www.facebook.com/CooperaEsportes/">
             <Image
-              src={'/icons/socials/facebook.svg'}
+              src={FacebookIcon}
               alt="Facebook"
               width={32}
               height={32}
@@ -60,7 +64,7 @@ export function Footer(): JSX.Element {
         </nav>
         <div>
           <Image
-            src={'/icons/GEFlogo.svg'}
+            src={GEFLogo}
             alt="Logo GEF"
             width={210}
             height={57}
