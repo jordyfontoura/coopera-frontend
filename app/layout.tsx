@@ -2,6 +2,7 @@ import type {Metadata} from 'next';
 import '@/styles/globals.scss';
 import {Roboto} from 'next/font/google';
 import {Header} from '@/components/layout/header/header.component';
+import {Footer} from '@/components/layout/footer/footer.component';
 
 /**
  * The Inter font.
@@ -32,6 +33,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <Header/>
         {children}
+        <Footer/>
       </body>
     </html>
   );
