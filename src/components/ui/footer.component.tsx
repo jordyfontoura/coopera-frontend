@@ -2,7 +2,6 @@ import { NavLinks } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
 import gefLogo from "@/assets/gef-logo.png";
-import facebookLogo from "@/assets/facebook-logo.png";
 import instagramLogo from "@/assets/instagram-logo.png";
 import { Logo } from "./logo.component";
 

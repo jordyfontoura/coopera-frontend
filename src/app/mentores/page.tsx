@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export const Mentores = [
+const Mentores = [
   ...Array.from({ length: 10 }, () => ({
     image:
       "https://gefcapital.com/wp-content/uploads/2024/01/Thamires-Final.jpg",
