@@ -9,7 +9,7 @@ const useScrollTriggeredCountUp = (
   end: number,
   duration = 2000
 ) => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(end);
   const isCounting = useRef(false);
   const counterInterval = useRef<NodeJS.Timeout | null>(null);
   const frameRate = 1000 / 60;
@@ -39,7 +39,7 @@ const useScrollTriggeredCountUp = (
         }
 
         isCounting.current = false;
-        setCount(0);
+        setCount(end);
       }
     },
     [end, frameRate, totalFrames]
