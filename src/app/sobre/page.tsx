@@ -65,12 +65,9 @@ export default function SobrePage() {
           </Link>
         </div>
       </main>
-      <div className="mt-16 bg-slate-500">
-        <p className="text-center text-white py-16 font-bold text-xl">
-          Acreditamos no esporte e na educação como pilares da integração
-          social.
-        </p>
-      </div>
+      <p className="bg-primary py-24 px-8 text-center text-white  font-bold text-3xl">
+        Acreditamos no esporte e na educação como pilares da integração social.
+      </p>
     </div>
   );
 }

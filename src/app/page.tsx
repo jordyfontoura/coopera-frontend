@@ -3,8 +3,11 @@
 import useScrollTriggeredCountUp from "@/hooks/count-up";
 import Link from "next/link";
 import { useRef } from "react";
-import heroImage from "@/assets/home-hero.png";
 import Image from "next/image";
+
+import heroImage from "@/assets/home-hero.png";
+import bolsistaImage from "@/assets/seja-bolsista.png";
+import parceiroImage from "@/assets/seja-parceiro.png";
 
 const countUpDuration = 4_000;
 
@@ -50,7 +53,7 @@ export default function HomePage() {
         </div>
       </section>
       <main>
-        <section className="min-h-dvh px-8 flex items-center">
+        <section className="py-24 px-8 flex items-center">
           <div className="max-w-7xl mx-auto flex flex-col justify-center">
             <h2 className="text-3xl font-bold text-primary">Quem somos</h2>
             <p className="mt-4 text-lg">
@@ -118,9 +121,7 @@ export default function HomePage() {
               </li>
             </ul>
           </div>
-        </section>
-        <section className="px-8 py-24">
-          <div className="max-w-7xl mx-auto">
+          <div className="max-w-7xl mx-auto mt-12">
             <h2 className="text-3xl font-bold text-primary">
               Conheça o depoimento de nossos bolsistas
             </h2>
@@ -153,11 +154,17 @@ export default function HomePage() {
           </div>
         </section>
         <section className="max-w-7xl mx-auto text-4xl grid grid-cols-1 md:grid-cols-2">
-          <Link href="/processo-seletivo" className="bg-primary text-center text-white font-bold text-3xl aspect-video flex items-center justify-center">
-            Seja um bolsista
+          <Link href="/processo-seletivo" className="bg-primary text-center text-white font-bold text-3xl aspect-video relative">
+            <Image src={bolsistaImage} alt="Hero image" layout="fill" objectFit="cover" />
+            <span className="absolute inset-0 flex items-center justify-center transition-all hover:backdrop-brightness-50">
+              Seja um bolsista
+            </span>
           </Link>
-          <Link href="/contato" className="bg-primary text-center text-white font-bold text-3xl aspect-video flex items-center justify-center">
-            Seja um parceiro
+          <Link href="/contato" className="bg-primary text-center text-white font-bold text-3xl aspect-video relative">
+            <Image src={parceiroImage} alt="Hero image" layout="fill" objectFit="cover" />
+            <span className="absolute inset-0 flex items-center justify-center transition-all       hover:backdrop-brightness-50">
+              Seja um parceiro
+            </span>
           </Link>
         </section>
       </main>

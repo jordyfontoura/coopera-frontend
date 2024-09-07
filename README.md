@@ -1,6 +1,8 @@
 <p align="center">
-  <a href="https://www.cooperaesportes.com.br" target="blank"><img src="https://raw.githubusercontent.com/jordyfontoura/coopera-frontend/main/public/logo.svg" width="120" alt="Coopera Esportes" /></a>
+  <a href="https://www.cooperaesportes.com.br" target="blank"><img src="https://raw.githubusercontent.com/jordyfontoura/coopera-frontend/main/src/assets/logo.png" width="120" alt="Coopera Esportes" /></a>
 </p>
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/70cec5fc-c448-44d6-a400-e66a0e890d17/deploy-status)](https://app.netlify.com/sites/cooperaesportes/deploys)
 
 # Coopera Esportes
 

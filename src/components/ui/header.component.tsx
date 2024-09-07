@@ -8,7 +8,7 @@ export function Header() {
   return (
     <header className="relative shadow-md h-16">
       <nav className="flex justify-between items-stretch px-4 py-2">
-        <Link href="/">
+        <Link href="/" tabIndex={-1}>
           <Logo />
         </Link>
         <button className="md:hidden">
