@@ -22,7 +22,7 @@ export default function MentoresPage() {
           {Mentores.map((mentor) => (
             <li
               key={mentor.nome}
-              className="relative aspect-[11/13] rounded-md overflow-hidden shadow-md group text-white"
+              className="relative aspect-[11/13] rounded-md overflow-hidden shadow-md group text-neutral-50"
               tabIndex={0}
             >
               <div className="absolute inset-0 transition-all duration-300 z-10 opacity-0 hidden lg:flex group-hover:flex group-hover:opacity-100 group-focus-within:opacity-100 bg-black/80 flex-col items-center px-6 py-8 space-y-4 overflow-y-auto">

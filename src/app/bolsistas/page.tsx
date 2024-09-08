@@ -11,7 +11,7 @@ const Bolsistas = [
 
 export default function BolsistasPage() {
   return (
-    <main className="px-8 py-16 text-white">
+    <main className="px-8 py-16 text-neutral-50">
       <nav>
         <ul className="grid grid-cols-1 items-center space-y-4 md:grid md:space-y-0 md:grid-cols-3 md:gap-4 lg:grid-cols-5 xl:grid-cols-7">
           {Bolsistas.map((bolsista) => (

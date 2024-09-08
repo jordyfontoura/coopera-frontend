@@ -43,7 +43,9 @@ export default function SobrePage() {
           aquisição de equipamentos, pagamento de taxas de inscrição em
           competições e/ou transporte para participação de eventos educacionais
         </p>
-        <p className="mt-4 font-bold text-tertiary text-xl">Como acompanhamos nossos atletas:</p>
+        <p className="mt-6 mb-2 font-bold text-tertiary text-xl">
+          Como acompanhamos nossos atletas:
+        </p>
         <ul className="list-disc ml-6">
           <li>O Atleta terá um mentor indicado pela Coopera Esportes</li>
           <li>
@@ -58,14 +60,16 @@ export default function SobrePage() {
             de antecedência.
           </li>
         </ul>
-        <h1 className="text-3xl font-bold text-primary mt-8 text-center">Relatórios</h1>
-        <div className="mt-8 text-center">
-          <Link href="/relatorios" className="text-center max-w-96 bg-primary text-background transition-colors px-8 py-4 rounded font-bold hover:bg-secondary">
+        <h1 className="text-3xl font-bold text-primary mt-8 text-center">
+          Relatórios
+        </h1>
+        <Link href="/relatorios">
+          <div className="mt-8 text-center max-w-96 bg-primary text-neutral-50 transition-colors px-8 py-4 rounded font-bold hover:bg-secondary">
             Clique aqui para conhecer nossa atuação de forma mais detalhada
-          </Link>
-        </div>
+          </div>
+        </Link>
       </main>
-      <p className="bg-primary py-24 px-8 text-center text-white  font-bold text-3xl">
+      <p className="bg-primary py-24 px-8 text-center text-neutral-50 font-bold text-3xl">
         Acreditamos no esporte e na educação como pilares da integração social.
       </p>
     </>

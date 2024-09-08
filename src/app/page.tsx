@@ -42,7 +42,7 @@ export default function HomePage() {
           layout="fill"
           objectFit="cover"
         />
-        <div className="absolute inset-0 flex flex-col justify-center items-center text-white px-8">
+        <div className="absolute inset-0 flex flex-col justify-center items-center text-neutral-50 px-8">
           <h1 className="text-5xl font-bold">
             Construir, Conquistar e Compartilhar
           </h1>
@@ -72,7 +72,7 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-        <section className="px-8 py-24 bg-primary text-white text-4xl">
+        <section className="px-8 py-24 bg-primary text-neutral-50 text-4xl">
           <ul className="max-w-7xl mx-auto flex flex-wrap space-y-8 sm:space-x-8 font-bold justify-start items-center md:justify-around md:space-y-0">
             <li className="m-0">
               + de <span ref={horasMentoriaRef}>{horasMentoria}</span>h de
@@ -154,13 +154,13 @@ export default function HomePage() {
           </div>
         </section>
         <section className="max-w-7xl mx-auto text-4xl grid grid-cols-1 md:grid-cols-2">
-          <Link href="/processo-seletivo" className="bg-primary text-center text-white font-bold text-3xl aspect-video relative">
+          <Link href="/processo-seletivo" className="bg-primary text-center text-neutral-50 font-bold text-3xl aspect-video relative">
             <Image src={bolsistaImage} alt="Hero image" layout="fill" objectFit="cover" />
             <span className="absolute inset-0 flex items-center justify-center transition-all hover:backdrop-brightness-50">
               Seja um bolsista
             </span>
           </Link>
-          <Link href="/contato" className="bg-primary text-center text-white font-bold text-3xl aspect-video relative">
+          <Link href="/contato" className="bg-primary text-center text-neutral-50 font-bold text-3xl aspect-video relative">
             <Image src={parceiroImage} alt="Hero image" layout="fill" objectFit="cover" />
             <span className="absolute inset-0 flex items-center justify-center transition-all       hover:backdrop-brightness-50">
               Seja um parceiro
@@ -168,7 +168,7 @@ export default function HomePage() {
           </Link>
         </section>
       </main>
-      <p className="bg-primary py-24 px-8 text-center text-white  font-bold text-3xl">
+      <p className="bg-primary py-24 px-8 text-center text-neutral-50  font-bold text-3xl">
         Acreditamos no esporte e na educação como pilares da integração social.
       </p>
     </>
