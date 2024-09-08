@@ -2,9 +2,9 @@ import Link from "next/link";
 
 export default function SobrePage() {
   return (
-    <div>
-      <main className="px-32 py-16">
-        <h1 className="text-4xl font-bold text-center">Coopera Esportes</h1>
+    <>
+      <main className="px-8 py-16 text-lg">
+        <h1 className="text-3xl font-bold text-primary">Coopera Esportes</h1>
         <p className="mt-4">
           A Coopera Esportes é uma Organização não Governamental (ONG) sem fins
           lucrativos que, por meio do apoio da prática esportiva, visa
@@ -16,7 +16,7 @@ export default function SobrePage() {
           disciplina nas práticas esportivas e na performance escolar e,
           acompanhamento (mentorado) dos jovens apoiados pela organização.
         </p>
-        <h1 className="text-4xl font-bold text-center mt-16">Nossa Missão</h1>
+        <h1 className="text-3xl font-bold text-primary mt-8">Nossa Missão</h1>
         <p className="mt-4">
           Fomentar a prática do esporte como instrumento de amadurecimento
           pessoal através do suporte financeiro e do aconselhamento do jovem.
@@ -25,7 +25,7 @@ export default function SobrePage() {
           melhora no desempenho escolar e potencializar futuras oportunidades de
           inserção profissional.
         </p>
-        <h1 className="text-4xl font-bold text-center mt-16">Objetivos</h1>
+        <h1 className="text-3xl font-bold text-primary mt-8">Objetivos</h1>
         <p className="mt-4">
           Fomentar a prática do esporte como instrumento de amadurecimento
           pessoal através do suporte financeiro e do aconselhamento do jovem.
@@ -34,7 +34,7 @@ export default function SobrePage() {
           melhora no desempenho escolar e potencializar futuras oportunidades de
           inserção profissional.
         </p>
-        <h1 className="text-4xl font-bold text-center mt-16">Como funciona</h1>
+        <h1 className="text-3xl font-bold text-primary mt-8">Como funciona</h1>
         <p className="mt-4">
           Oferecemos bolsa mensal no valor de R$ 100,00 a R$ 300,00 aos atletas
           de alto rendimento de 12 a 18 anos. Buscamos apoiar jovens atletas com
@@ -43,7 +43,7 @@ export default function SobrePage() {
           aquisição de equipamentos, pagamento de taxas de inscrição em
           competições e/ou transporte para participação de eventos educacionais
         </p>
-        <p className="mt-4 font-bold">Como acompanhamos nossos atletas:</p>
+        <p className="mt-4 font-bold text-tertiary text-xl">Como acompanhamos nossos atletas:</p>
         <ul className="list-disc ml-6">
           <li>O Atleta terá um mentor indicado pela Coopera Esportes</li>
           <li>
@@ -58,9 +58,9 @@ export default function SobrePage() {
             de antecedência.
           </li>
         </ul>
-        <h1 className="text-4xl font-bold text-center mt-16">Relatórios</h1>
-        <div className="text-center mt-4">
-          <Link href="/relatorios" className="text-center">
+        <h1 className="text-3xl font-bold text-primary mt-8 text-center">Relatórios</h1>
+        <div className="mt-8 text-center">
+          <Link href="/relatorios" className="text-center max-w-96 bg-primary text-background transition-colors px-8 py-4 rounded font-bold hover:bg-secondary">
             Clique aqui para conhecer nossa atuação de forma mais detalhada
           </Link>
         </div>
@@ -68,6 +68,6 @@ export default function SobrePage() {
       <p className="bg-primary py-24 px-8 text-center text-white  font-bold text-3xl">
         Acreditamos no esporte e na educação como pilares da integração social.
       </p>
-    </div>
+    </>
   );
 }
