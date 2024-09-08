@@ -11,7 +11,7 @@ export function Footer() {
       <nav className="flex flex-col space-y-6 items-center w-full md:flex-row md:justify-evenly md:items-center md:space-y-0">
         <Logo className="h-20" />
         <div className="flex space-x-3 md:flex-col md:space-y-3">
-          <Link href="https://www.instagram.com/cooperaesportes">
+          <Link href="https://www.instagram.com/cooperaesportes" target="_blank">
             <Image src={instagramLogo} alt="Instagram" width={26} height={26} />
           </Link>
         </div>
@@ -29,7 +29,7 @@ export function Footer() {
         </ul>
         <div>
           <p className="text-xs">Apoio:</p>
-          <Link href="https://gefcapital.com/">
+          <Link href="https://gefcapital.com/" target="_blank">
             <Image src={gefLogo} alt="Logo" width={150} height={150} />
           </Link>
         </div>
