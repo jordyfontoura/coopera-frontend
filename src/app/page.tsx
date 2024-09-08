@@ -42,7 +42,7 @@ export default function HomePage() {
           layout="fill"
           objectFit="cover"
         />
-        <div className="absolute inset-0 flex flex-col justify-center items-center text-background px-8">
+        <div className="absolute inset-0 flex flex-col justify-center items-center text-white px-8">
           <h1 className="text-5xl font-bold">
             Construir, Conquistar e Compartilhar
           </h1>
@@ -72,7 +72,7 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-        <section className="px-8 py-24 bg-primary text-background text-4xl">
+        <section className="px-8 py-24 bg-primary text-white text-4xl">
           <ul className="max-w-7xl mx-auto flex flex-wrap space-y-8 sm:space-x-8 font-bold justify-start items-center md:justify-around md:space-y-0">
             <li className="m-0">
               + de <span ref={horasMentoriaRef}>{horasMentoria}</span>h de
@@ -91,7 +91,7 @@ export default function HomePage() {
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl font-bold text-primary">Nossa Atuação</h2>
             <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-              <li className="shadow-sm p-8 rounded-md border">
+              <li className="shadow-sm p-8 rounded-md border dark:bg-neutral-900 dark:border-neutral-800">
                 <h3 className="text-2xl font-bold text-primary">Mentoria</h3>
                 <p className="mt-4 text-lg">
                   Fornecemos mentoria pessoal e profissional para os bolsistas,
@@ -99,7 +99,7 @@ export default function HomePage() {
                   nossos mentores.
                 </p>
               </li>
-              <li className="shadow-sm p-8 rounded-md border">
+              <li className="shadow-sm p-8 rounded-md border dark:bg-neutral-900 dark:border-neutral-800">
                 <h3 className="text-2xl font-bold text-primary">
                   Bolsas de incentivo
                 </h3>
@@ -109,7 +109,7 @@ export default function HomePage() {
                   jovens atletas comprometidos e que se destacam.
                 </p>
               </li>
-              <li className="shadow-sm p-8 rounded-md border">
+              <li className="shadow-sm p-8 rounded-md border dark:bg-neutral-900 dark:border-neutral-800">
                 <h3 className="text-2xl font-bold text-primary">
                   Eventos exclusivos
                 </h3>
@@ -126,7 +126,7 @@ export default function HomePage() {
               Conheça o depoimento de nossos bolsistas
             </h2>
             <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-              <li className="shadow-sm p-8 rounded-md border">
+              <li className="shadow-sm p-8 rounded-md border dark:bg-neutral-900 dark:border-neutral-800">
                 <h3 className="text-2xl font-bold text-primary">
                   Murilo Mendes
                 </h3>
@@ -139,7 +139,7 @@ export default function HomePage() {
                   objetivos”
                 </p>
               </li>
-              <li className="shadow-sm p-8 rounded-md border">
+              <li className="shadow-sm p-8 rounded-md border dark:bg-neutral-900 dark:border-neutral-800">
                 <h3 className="text-2xl font-bold text-primary">Thaissa</h3>
                 <p className="text-tertiary">Atleta de Atletismo</p>
                 <p className="mt-4">

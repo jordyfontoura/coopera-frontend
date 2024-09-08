@@ -19,7 +19,7 @@ export function Header() {
   }
 
   return (
-    <header className="shadow-md h-16 overflow-visible">
+    <header className="shadow-md h-16 overflow-visible dark:bg-neutral-900">
       <nav className="flex justify-between items-stretch px-4 py-2">
         <Link href="/" tabIndex={-1}>
           <Logo />

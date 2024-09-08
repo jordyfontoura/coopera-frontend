@@ -30,7 +30,7 @@ export function Footer() {
         <div>
           <p className="text-xs">Apoio:</p>
           <Link href="https://gefcapital.com/" target="_blank">
-            <Image src={gefLogo} alt="Logo" width={150} height={150} />
+            <Image src={gefLogo} alt="Logo" width={150} height={150}  className="dark:invert"/>
           </Link>
         </div>
       </nav>
