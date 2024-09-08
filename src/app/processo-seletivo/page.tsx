@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function ProcessoSeletivoPage() {
   return (
-    <main className="px-8 py-16 text-lg">
+    <main className="px-8 py-16 text-lg max-w-7xl mx-auto">
       <h2 className="text-4xl font-bold text-primary">Processo Seletivo Coopera</h2>
       <p className="mt-4">
       Você pode participar da Coopera como bolsista. O processo de seleção é feito anualmente, durante um determinado período, e todos os candidatos que se encaixem em nossos critérios tem sua aplicação avaliada gratuitamente.

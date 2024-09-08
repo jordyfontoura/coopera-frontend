@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function SobrePage() {
   return (
     <>
-      <main className="px-8 py-16 text-lg">
+      <main className="px-8 py-16 text-lg max-w-7xl mx-auto">
         <h1 className="text-3xl font-bold text-primary">Coopera Esportes</h1>
         <p className="mt-4">
           A Coopera Esportes é uma Organização não Governamental (ONG) sem fins
