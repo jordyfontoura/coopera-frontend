@@ -27,10 +27,10 @@ export default function MentoresPage() {
             >
               <div className="absolute inset-0 transition-all duration-300 z-10 opacity-0 hidden lg:flex group-hover:flex group-hover:opacity-100 group-focus-within:opacity-100 bg-black/80 flex-col items-center px-6 py-8 space-y-4 overflow-y-auto">
                 <div className="flex flex-col items-center text-center">
-                  <h2 className="text-background font-bold text-lg">{mentor.nome}</h2>
-                  <p className="text-background text-sm">{mentor.cargo}</p>
+                  <h2 className="text-background font-bold text-xl">{mentor.nome}</h2>
+                  <p className="text-background text-md">{mentor.cargo}</p>
                 </div>
-                <p className="text-background text-sm whitespace-pre-wrap">{mentor.descricao}</p>
+                <p className="text-background text-md whitespace-pre-wrap">{mentor.descricao}</p>
               </div>
               <Image src={mentor.image} alt={mentor.nome} fill/>
               <div className="absolute bottom-0 w-full flex flex-col items-center justify-end bg-gradient-to-t from-foreground from-60% to-transparent py-4 min-h-32 transition-all duration-300 group-focus-within:opacity-0 group-hover:opacity-0">
