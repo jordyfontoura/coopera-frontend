@@ -26,7 +26,7 @@ Acompanhe as novidades pelo nosso instagram <Link href="https://www.instagram.co
         <li>Histórico no esporte e, principalmente histórico de vitórias</li>
         <li>Rotina e dia-a-dia</li>
         <li>Interação com a sua comunidade</li>
-        <li>Porque a Coopera Esportes deve escolher você o vencedor da bolsa ?</li>
+        <li>Por que a Coopera Esportes deve escolher você o vencedor da bolsa ?</li>
       </ul>
       <p className="mt-4">
         O atleta deverá preencher seus dados e fazer o upload do vídeo no formulário de seleção que ficará presente neste site  e aberto somente durante o período do processo seletivo. Caso tenha dúvidas, entre em contato conosco.
