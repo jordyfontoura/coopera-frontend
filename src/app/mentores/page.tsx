@@ -1,25 +1,59 @@
+import { env } from "@/config";
 import Image from "next/image";
+import { z } from "zod";
 
-const Mentores = [
-  ...Array.from({ length: 10 }, () => ({
-    image:
-      "https://gefcapital.com/wp-content/uploads/2024/01/Thamires-Final.jpg",
-    nome: "Thamires Souza",
-    cargo: "Operations Senior Analyst – Latin America",
-    descricao: `Thamires Souza is an Operations Senior Analyst at GEF Capital Partners. She is based in São Paulo, where she is responsible for operations in Latin America.
+const API_MENTORES_URL = `${env.CMS_API_URL}/mentores?pagination[limit]=1000&populate=foto`;
 
-Ms. Souza joined GEF Capital Partners in 2023. Before joining GEF Capital, she worked as Operations and Innovation Analyst at Quasar Asset Management, which she joined in 2021. Prior to joining Quasar Asset Management, Ms. Souza was part of Funds Brazil team at Pátria Investimentos and worked at Genial Investimentos as Pricing and Risk Intern, having more than 4 years of experience in process automation.
+const cmsPictureSchema = z.object({
+  url: z.string(),
+});
 
-Ms. Souza received a B.A. in Economics from Pontifícia Universidade Católica (PUC-SP).`,
-  })),
-];
+const mentorSchema = z.object({
+  nome: z.string(),
+  cargo: z.string(),
+  sobre: z.array(
+    z.object({
+      type: z.string(),
+      children: z.array(z.object({ type: z.string(), text: z.string() })),
+    })
+  ),
+  foto: cmsPictureSchema,
+});
 
-export default function MentoresPage() {
+const mentoresSchema = z.array(mentorSchema);
+
+const cmsSchema = z.object({
+  data: z.any(),
+  meta: z.any(),
+});
+
+export default async function MentoresPage() {
+  const response = await fetch(API_MENTORES_URL, {
+    headers: {
+      Authorization: `Bearer ${env.CMS_API_TOKEN}`,
+    },
+  });
+
+  if (!response.ok) {
+    throw new Error(`Falha ao carregar mentores via API ${API_MENTORES_URL}`);
+  }
+
+  const mentoresJson = await response.json().catch(() => {
+    throw new Error(
+      `Falha ao fazer parse do JSON retornado pela API ${API_MENTORES_URL}`
+    );
+  });
+
+  const cmsJson = cmsSchema.parse(mentoresJson);
+
+  const mentores = mentoresSchema.parse(cmsJson.data);
+  mentores.sort((a, b) => a.nome.localeCompare(b.nome));
+
   return (
     <main className="px-8 py-16">
       <nav>
         <ul className="grid grid-cols-1 items-center space-y-4 md:grid md:space-y-0 md:grid-cols-2 md:gap-4 lg:grid-cols-3 xl:grid-cols-4">
-          {Mentores.map((mentor) => (
+          {mentores.map((mentor) => (
             <li
               key={mentor.nome}
               className="relative aspect-[11/13] rounded-md overflow-hidden shadow-md group text-neutral-50"
@@ -30,9 +64,18 @@ export default function MentoresPage() {
                   <h2 className="font-bold text-xl">{mentor.nome}</h2>
                   <p className="text-md">{mentor.cargo}</p>
                 </div>
-                <p className="text-md whitespace-pre-wrap">{mentor.descricao}</p>
+                <p className="text-md whitespace-pre-wrap">
+                  {mentor.sobre
+                    .map((bloco) => {
+                      return bloco.children.map((child) => {
+                        return child.text;
+                      });
+                    })
+                    .flat()
+                    .join("\n")}
+                </p>
               </div>
-              <Image src={mentor.image} alt={mentor.nome} fill/>
+              <Image src={mentor.foto.url} alt={mentor.nome} fill />
               <div className="absolute bottom-0 w-full flex flex-col items-center justify-end bg-gradient-to-t from-neutral-900 from-60% to-transparent py-4 min-h-32 transition-all duration-300 group-focus-within:opacity-0 group-hover:opacity-0">
                 <h2 className="font-bold text-lg">{mentor.nome}</h2>
                 <p className="text-sm">{mentor.cargo}</p>
