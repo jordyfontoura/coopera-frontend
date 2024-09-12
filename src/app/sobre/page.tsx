@@ -1,8 +1,51 @@
 import Image from "next/image";
 import Link from "next/link";
 import fileImage from "@/assets/file.png";
+import { env } from "@/config";
+import { z } from "zod";
+
+
+const API_RELATORIOS_URL = `${env.CMS_API_URL}/relatorio?populate[relatorios][populate][arquivo][fields][0]=url`;
+
+const cmsFileSchema = z.object({
+  url: z.string(),
+});
+
+const relatoriosSchema = z.object({
+  relatorios: z.array(z.object({
+    id: z.number(),
+    nome: z.string(),
+    arquivo: cmsFileSchema
+  }))
+});
+
+
+const cmsSchema = z.object({
+  data: z.any(),
+  meta: z.any(),
+});
+
 
 export default async function SobrePage() {
+  const response = await fetch(API_RELATORIOS_URL, {
+    headers: {
+      Authorization: `Bearer ${env.CMS_API_TOKEN}`,
+    },
+  });
+
+  if (!response.ok) {
+    throw new Error(`Falha ao carregar bolsistas via API ${API_RELATORIOS_URL}`);
+  }
+
+  const relatoriosJson = await response.json().catch(() => {
+    throw new Error(
+      `Falha ao fazer parse do JSON retornado pela API ${API_RELATORIOS_URL}`
+    );
+  });
+
+  const cmsJson = cmsSchema.parse(relatoriosJson);
+  const relatorios = relatoriosSchema.parse(cmsJson.data).relatorios;
+
   return (
     <>
       <main className="px-8 py-16 text-lg max-w-7xl mx-auto">
@@ -67,17 +110,17 @@ export default async function SobrePage() {
         </h1>
         <p>Conheça nossa atuação</p>
         <ul className="mt-4 flex flex-wrap items-stretch">
-          {Array.from({length: 10}).map((_, index) => (
-            <Link href="/relatorios/2021" key={index}>
+          {relatorios.map((relatorio) => (
+            <Link href={relatorio.arquivo.url} key={relatorio.id}>
               <li className="p-2 flex flex-col items-center">
                 <Image
                   src={fileImage}
                   width={100}
                   height={100}
-                  alt="Relatório 2021"
+                  alt={relatorio.nome}
                   className="dark:invert"
                 />
-                <p>Relatório 2021</p>
+                <p>{relatorio.nome}</p>
               </li>
             </Link>
           ))}
