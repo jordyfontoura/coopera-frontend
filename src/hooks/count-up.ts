@@ -7,42 +7,59 @@ const easeOutExpo = (t: number) => {
 const useScrollTriggeredCountUp = (
   ref: React.RefObject<HTMLElement>,
   end: number,
-  duration = 2000
+  duration = 2000,
+  maxTimes = Infinity
 ) => {
   const [count, setCount] = useState(end);
   const isCounting = useRef(false);
-  const counterInterval = useRef<NodeJS.Timeout | null>(null);
-  const frameRate = 1000 / 60;
-  const totalFrames = Math.round(duration / frameRate);
+  const frameRequestId = useRef<number | null>(null);
+  const times = useRef(0);
+  const beginAt = useRef(0);
+
+  const frameCallback = useCallback(
+    function frame() {
+      const elapsed = performance.now() - beginAt.current;
+
+      if (elapsed >= duration) {
+        setCount(end);
+        isCounting.current = false;
+        if (frameRequestId.current)
+          cancelAnimationFrame(frameRequestId.current);
+        return;
+      }
+
+      const progress = easeOutExpo(elapsed / duration);
+      setCount(Math.round(end * progress));
+
+      frameRequestId.current = requestAnimationFrame(frameCallback);
+    },
+    [end, duration]
+  );
 
   const handleScroll = useCallback(
     (entries: IntersectionObserverEntry[]) => {
       const [entry] = entries;
 
-      if (entry.isIntersecting && !isCounting.current) {
+      if (
+        entry.isIntersecting &&
+        !isCounting.current &&
+        times.current < maxTimes
+      ) {
         isCounting.current = true;
-        let frame = 0;
+        times.current++;
+        beginAt.current = performance.now();
 
-        counterInterval.current = setInterval(() => {
-          frame++;
-          const progress = easeOutExpo(frame / totalFrames);
-          setCount(Math.round(end * progress));
-
-          if (frame === totalFrames) {
-            clearInterval(counterInterval.current as unknown as number);
-            isCounting.current = false;
-          }
-        }, frameRate);
+        frameCallback();
       } else {
-        if (counterInterval.current) {
-          clearInterval(counterInterval.current);
+        if (frameRequestId.current) {
+          cancelAnimationFrame(frameRequestId.current);
         }
 
         isCounting.current = false;
         setCount(end);
       }
     },
-    [end, frameRate, totalFrames]
+    [end, maxTimes, frameCallback]
   );
 
   useEffect(() => {

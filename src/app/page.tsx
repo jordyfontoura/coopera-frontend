@@ -1,37 +1,58 @@
-"use client";
-
-import useScrollTriggeredCountUp from "@/hooks/count-up";
 import Link from "next/link";
-import { useRef } from "react";
 import Image from "next/image";
 
 import heroImage from "@/assets/home-hero.png";
 import bolsistaImage from "@/assets/seja-bolsista.png";
 import parceiroImage from "@/assets/seja-parceiro.png";
+import { AutoIncrement } from "@/components/ui/auto-increment.component";
+import { env } from "@/config";
+import { z } from "zod";
+import { Markdown } from "@/components/ui/markdown.component";
 
-const countUpDuration = 4_000;
 
-export default function HomePage() {
-  const horasMentoriaRef = useRef(null);
-  const horasMentoria = useScrollTriggeredCountUp(
-    horasMentoriaRef,
-    320,
-    countUpDuration
-  );
+const API_BOLSISTAS_URL = `${env.CMS_API_URL}/bolsistas?pagination[limit]=1000`;
 
-  const totalMentoresRef = useRef(null);
-  const totalMentores = useScrollTriggeredCountUp(
-    totalMentoresRef,
-    10,
-    countUpDuration
-  );
+const cmsPictureSchema = z.object({
+  url: z.string(),
+});
 
-  const totalMentoradosRef = useRef(null);
-  const totalMentorados = useScrollTriggeredCountUp(
-    totalMentoradosRef,
-    25,
-    countUpDuration
-  );
+const mentorSchema = z.object({
+  id: z.string(),
+  nome: z.string(),
+  esporte: z.string(),
+  foto: cmsPictureSchema,
+  depoimento: z.string().optional(),
+});
+
+const bolsistasSchema = z.array(mentorSchema);
+
+const cmsSchema = z.object({
+  data: z.any(),
+  meta: z.any(),
+});
+
+export default async function HomePage() {
+  const response = await fetch(API_BOLSISTAS_URL, {
+    headers: {
+      Authorization: `Bearer ${env.CMS_API_TOKEN}`,
+    },
+  });
+
+  if (!response.ok) {
+    throw new Error(`Falha ao carregar bolsistas via API ${API_BOLSISTAS_URL}`);
+  }
+
+  const bolsistasJson = await response.json().catch(() => {
+    throw new Error(
+      `Falha ao fazer parse do JSON retornado pela API ${API_BOLSISTAS_URL}`
+    );
+  });
+
+  const cmsJson = cmsSchema.parse(bolsistasJson);
+
+  const bolsistas = bolsistasSchema.parse(cmsJson.data);
+
+  bolsistas.sort((a, b) => a.nome.localeCompare(b.nome));
 
   return (
     <>
@@ -75,14 +96,14 @@ export default function HomePage() {
         <section className="px-8 py-24 bg-primary text-neutral-50 text-4xl">
           <ul className="max-w-7xl mx-auto flex flex-wrap space-y-8 sm:space-x-8 font-bold justify-start items-center md:justify-around md:space-y-0">
             <li className="m-0">
-              + de <span ref={horasMentoriaRef}>{horasMentoria}</span>h de
+              + de <AutoIncrement duration={4_000} value={320} maxTimes={1}/>h de
               mentoria
             </li>
             <li className="m-0">
-              <span ref={totalMentoresRef}>{totalMentores}</span> mentores
+              <AutoIncrement duration={4_000} value={10} maxTimes={1}/> mentores
             </li>
             <li className="m-0">
-              + de <span ref={totalMentoradosRef}>{totalMentorados}</span>{" "}
+              + de <AutoIncrement duration={4_000} value={25} maxTimes={1}/>{" "}
               mentorados
             </li>
           </ul>
@@ -126,30 +147,17 @@ export default function HomePage() {
               Conheça o depoimento de nossos bolsistas
             </h2>
             <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-              <li className="shadow-sm p-8 rounded-md border dark:bg-neutral-900 dark:border-neutral-800">
-                <h3 className="text-2xl font-bold text-primary">
-                  Murilo Mendes
-                </h3>
-                <p className="text-tertiary">Atleta de Jiu-Jitsu</p>
-                <p className="mt-4">
-                  “A coopera impactou a minha vida em muitos meios mas,
-                  principalmente, em mudar a minha mentalidade em relação aos
-                  estudos e, em conjunto a isso, me cobrar em manter uma rotina.
-                  A coopera me ajudou a captar recursos para ajudar em meus
-                  objetivos”
-                </p>
-              </li>
-              <li className="shadow-sm p-8 rounded-md border dark:bg-neutral-900 dark:border-neutral-800">
-                <h3 className="text-2xl font-bold text-primary">Thaissa</h3>
-                <p className="text-tertiary">Atleta de Atletismo</p>
-                <p className="mt-4">
-                  “A Coopera foi uma das melhores coisas que me ocorreu, tive um
-                  mentor espetacular com quem sempre tive liberdade para falar
-                  sobre as limitações dos espaços de treino e ouvir
-                  possibilidades de soluções, incluindo a abertura para falar
-                  sobre meus sonhos além do esporte.”
-                </p>
-              </li>
+              {bolsistas.map((bolsista) => (
+                <li key={bolsista.id} className="shadow-sm p-8 rounded-md border dark:bg-neutral-900 dark:border-neutral-800">
+                  <h3 className="text-2xl font-bold text-primary">
+                    {bolsista.nome}
+                  </h3>
+                  <p className="text-tertiary">{bolsista.esporte}</p>
+                  <p className="mt-4">
+                    <Markdown content={bolsista.depoimento} />
+                  </p>
+                </li>
+              ))}
             </ul>
           </div>
         </section>
