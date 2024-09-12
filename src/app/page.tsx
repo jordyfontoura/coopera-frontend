@@ -10,15 +10,10 @@ import { z } from "zod";
 
 const API_BOLSISTAS_URL = `${env.CMS_API_URL}/bolsistas?pagination[limit]=1000`;
 
-const cmsPictureSchema = z.object({
-  url: z.string(),
-});
-
 const mentorSchema = z.object({
-  id: z.string(),
+  id: z.number(),
   nome: z.string(),
   esporte: z.string(),
-  foto: cmsPictureSchema,
   depoimento: z.string().optional(),
 });
 
