@@ -4,7 +4,7 @@ import { cloudinaryLoader } from "@/config/image-loader";
 import Image from "next/image";
 import { z } from "zod";
 
-const API_MENTORES_URL = `${env.CMS_API_URL}/mentores?pagination[limit]=1000&populate=foto`;
+const API_MENTORES_URL = `${env.CMS_API_URL}/mentores?pagination[limit]=1000&populate[foto][fields][0]=url`;
 
 const cmsPictureSchema = z.object({
   url: z.string(),

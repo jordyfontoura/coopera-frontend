@@ -5,7 +5,7 @@ import Image from "next/image";
 import { z } from "zod";
 
 
-const API_BOLSISTAS_URL = `${env.CMS_API_URL}/bolsistas?pagination[limit]=1000&populate=foto`;
+const API_BOLSISTAS_URL = `${env.CMS_API_URL}/bolsistas?pagination[limit]=1000&populate[foto][fields][0]=url`;
 
 const cmsPictureSchema = z.object({
   url: z.string(),
