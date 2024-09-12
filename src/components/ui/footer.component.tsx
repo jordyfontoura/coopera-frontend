@@ -12,7 +12,7 @@ export function Footer() {
         <Logo className="h-20" />
         <div className="flex space-x-3 md:flex-col md:space-y-3">
           <Link href="https://www.instagram.com/cooperaesportes" target="_blank">
-            <Image src={instagramLogo} alt="Instagram" width={26} height={26} />
+            <Image src={instagramLogo} alt="Instagram" width={26} height={26} className="dark:invert"/>
           </Link>
         </div>
         <ul className="flex flex-col items-center space-y-3 md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-0 md:space-y-0">
