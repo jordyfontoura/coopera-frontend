@@ -13,12 +13,7 @@ const cmsPictureSchema = z.object({
 const mentorSchema = z.object({
   nome: z.string(),
   cargo: z.string(),
-  sobre: z.array(
-    z.object({
-      type: z.string(),
-      children: z.array(z.object({ type: z.string(), text: z.string() })),
-    })
-  ),
+  sobre: z.string(),
   foto: cmsPictureSchema,
 });
 
@@ -67,14 +62,7 @@ export default async function MentoresPage() {
                   <p className="text-md">{mentor.cargo}</p>
                 </div>
                 <p className="text-md whitespace-pre-wrap">
-                  {mentor.sobre
-                    .map((bloco) => {
-                      return bloco.children.map((child) => {
-                        return child.text;
-                      });
-                    })
-                    .flat()
-                    .join("\n")}
+                  {mentor.sobre}
                 </p>
               </div>
               <Image loader={cloudinaryLoader} src={mentor.foto.url} alt={mentor.nome} fill />

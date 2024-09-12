@@ -7,8 +7,6 @@ import parceiroImage from "@/assets/seja-parceiro.png";
 import { AutoIncrement } from "@/components/ui/auto-increment.component";
 import { env } from "@/config";
 import { z } from "zod";
-import { Markdown } from "@/components/ui/markdown.component";
-
 
 const API_BOLSISTAS_URL = `${env.CMS_API_URL}/bolsistas?pagination[limit]=1000`;
 
@@ -50,9 +48,16 @@ export default async function HomePage() {
 
   const cmsJson = cmsSchema.parse(bolsistasJson);
 
-  const bolsistas = bolsistasSchema.parse(cmsJson.data);
-
-  bolsistas.sort((a, b) => a.nome.localeCompare(b.nome));
+  const bolsistasComDepoimentos = bolsistasSchema
+    .parse(cmsJson.data)
+    .filter(
+      (bolsista) => bolsista.depoimento && bolsista.depoimento.trim().length > 0
+    )
+    .map((bolsista) => ({
+      ...bolsista,
+      depoimento: bolsista.depoimento!.trim(),
+    }))
+    .sort((a, b) => a.nome.localeCompare(b.nome));
 
   return (
     <>
@@ -80,8 +85,8 @@ export default async function HomePage() {
             <p className="mt-4 text-lg">
               Fundada em 2019, a Coopera Esportes é uma Organização não
               Governamental (ONG), sem fins lucrativos, que por meio do apoio à
-              prática esportiva e educação, visa contribuir para o desenvolvimento
-              integral do adolescente.
+              prática esportiva e educação, visa contribuir para o
+              desenvolvimento integral do adolescente.
             </p>
             <div className="mt-8">
               <Link
@@ -96,14 +101,15 @@ export default async function HomePage() {
         <section className="px-8 py-24 bg-primary text-neutral-50 text-4xl">
           <ul className="max-w-7xl mx-auto flex flex-wrap space-y-8 sm:space-x-8 font-bold justify-start items-center md:justify-around md:space-y-0">
             <li className="m-0">
-              + de <AutoIncrement duration={4_000} value={320} maxTimes={1}/>h de
-              mentoria
+              + de <AutoIncrement duration={4_000} value={320} maxTimes={1} />h
+              de mentoria
             </li>
             <li className="m-0">
-              <AutoIncrement duration={4_000} value={10} maxTimes={1}/> mentores
+              <AutoIncrement duration={4_000} value={10} maxTimes={1} />{" "}
+              mentores
             </li>
             <li className="m-0">
-              + de <AutoIncrement duration={4_000} value={25} maxTimes={1}/>{" "}
+              + de <AutoIncrement duration={4_000} value={25} maxTimes={1} />{" "}
               mentorados
             </li>
           </ul>
@@ -147,29 +153,46 @@ export default async function HomePage() {
               Conheça o depoimento de nossos bolsistas
             </h2>
             <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-              {bolsistas.map((bolsista) => (
-                <li key={bolsista.id} className="shadow-sm p-8 rounded-md border dark:bg-neutral-900 dark:border-neutral-800">
+              {bolsistasComDepoimentos.map((bolsista) => (
+                <li
+                  key={bolsista.id}
+                  className="shadow-sm p-8 rounded-md border dark:bg-neutral-900 dark:border-neutral-800"
+                >
                   <h3 className="text-2xl font-bold text-primary">
                     {bolsista.nome}
                   </h3>
                   <p className="text-tertiary">{bolsista.esporte}</p>
-                  <p className="mt-4">
-                    <Markdown content={bolsista.depoimento} />
-                  </p>
+                  <p className="mt-4">{bolsista.depoimento}</p>
                 </li>
               ))}
             </ul>
           </div>
         </section>
         <section className="max-w-7xl mx-auto text-4xl grid grid-cols-1 md:grid-cols-2">
-          <Link href="/processo-seletivo" className="bg-primary text-center text-neutral-50 font-bold text-3xl aspect-video relative">
-            <Image src={bolsistaImage} alt="Hero image" layout="fill" objectFit="cover" />
+          <Link
+            href="/processo-seletivo"
+            className="bg-primary text-center text-neutral-50 font-bold text-3xl aspect-video relative"
+          >
+            <Image
+              src={bolsistaImage}
+              alt="Hero image"
+              layout="fill"
+              objectFit="cover"
+            />
             <span className="absolute inset-0 flex items-center justify-center transition-all hover:backdrop-brightness-50">
               Seja um bolsista
             </span>
           </Link>
-          <Link href="/contato" className="bg-primary text-center text-neutral-50 font-bold text-3xl aspect-video relative">
-            <Image src={parceiroImage} alt="Hero image" layout="fill" objectFit="cover" />
+          <Link
+            href="/contato"
+            className="bg-primary text-center text-neutral-50 font-bold text-3xl aspect-video relative"
+          >
+            <Image
+              src={parceiroImage}
+              alt="Hero image"
+              layout="fill"
+              objectFit="cover"
+            />
             <span className="absolute inset-0 flex items-center justify-center transition-all       hover:backdrop-brightness-50">
               Seja um parceiro
             </span>
