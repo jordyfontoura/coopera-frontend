@@ -1,6 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
+import fileImage from "@/assets/file.png";
 
-export default function SobrePage() {
+export default async function SobrePage() {
   return (
     <>
       <main className="px-8 py-16 text-lg max-w-7xl mx-auto">
@@ -60,14 +62,26 @@ export default function SobrePage() {
             de antecedência.
           </li>
         </ul>
-        <h1 className="text-3xl font-bold text-primary mt-8 text-center">
+        <h1 className="text-3xl font-bold text-primary mt-8">
           Relatórios
         </h1>
-        <Link href="/relatorios">
-          <div className="mt-8 text-center max-w-96 bg-primary text-neutral-50 transition-colors px-8 py-4 rounded font-bold hover:bg-secondary">
-            Clique aqui para conhecer nossa atuação de forma mais detalhada
-          </div>
-        </Link>
+        <p>Conheça nossa atuação</p>
+        <ul className="mt-4 flex flex-wrap items-stretch">
+          {Array.from({length: 10}).map((_, index) => (
+            <Link href="/relatorios/2021" key={index}>
+              <li className="p-2 flex flex-col items-center">
+                <Image
+                  src={fileImage}
+                  width={100}
+                  height={100}
+                  alt="Relatório 2021"
+                  className="dark:invert"
+                />
+                <p>Relatório 2021</p>
+              </li>
+            </Link>
+          ))}
+        </ul>
       </main>
       <p className="bg-primary py-24 px-8 text-center text-neutral-50 font-bold text-3xl">
         Acreditamos no esporte e na educação como pilares da integração social.
