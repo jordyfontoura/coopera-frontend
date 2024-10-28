@@ -18,10 +18,8 @@ const mentorSchema = z.object({
   depoimento: z.string().nullable().optional(),
 });
 
-const bolsistasSchema = z.array(mentorSchema);
-
 const cmsSchema = z.object({
-  data: z.any(),
+  data: z.array(z.any()),
   meta: z.any(),
 });
 
@@ -45,8 +43,25 @@ export default async function BolsistasPage() {
 
   const cmsJson = cmsSchema.parse(bolsistasJson);
 
-  const bolsistas = bolsistasSchema.parse(cmsJson.data);
+  const bolsistas = cmsJson.data
+    .map((bolsista) => mentorSchema.safeParse(bolsista))
+    .filter((bolsista) => bolsista.success)
+    .map((bolsista) => bolsista.data);
   bolsistas.sort((a, b) => a.nome.localeCompare(b.nome));
+
+  if (bolsistas.length !== cmsJson.data.length) {
+    console.warn(
+      `Há ${
+        cmsJson.data.length - bolsistas.length
+      } mentores com dados inválidos que foram ignorados`
+    );
+
+    console.warn(
+      JSON.stringify(
+        cmsJson.data.filter((mentor) => !mentorSchema.safeParse(mentor).success)
+      )
+    );
+  }
 
   return (
     <main className="px-8 py-16 text-neutral-50">

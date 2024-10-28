@@ -17,10 +17,8 @@ const mentorSchema = z.object({
   foto: cmsPictureSchema,
 });
 
-const mentoresSchema = z.array(mentorSchema);
-
 const cmsSchema = z.object({
-  data: z.any(),
+  data: z.array(z.any()),
   meta: z.any(),
 });
 
@@ -43,8 +41,25 @@ export default async function MentoresPage() {
 
   const cmsJson = cmsSchema.parse(mentoresJson);
 
-  const mentores = mentoresSchema.parse(cmsJson.data);
+  const mentores = cmsJson.data
+    .map((mentor) => mentorSchema.safeParse(mentor))
+    .filter((mentor) => mentor.success)
+    .map((mentor) => mentor.data);
   mentores.sort((a, b) => a.nome.localeCompare(b.nome));
+  
+  if (mentores.length !== cmsJson.data.length) {
+    console.warn(
+      `Há ${
+        cmsJson.data.length - mentores.length
+      } mentores com dados inválidos que foram ignorados`
+    );
+
+    console.warn(
+      JSON.stringify(
+        cmsJson.data.filter((mentor) => !mentorSchema.safeParse(mentor).success)
+      )
+    );
+  }
 
   return (
     <main className="px-8 py-16">
