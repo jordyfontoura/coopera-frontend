@@ -6,8 +6,8 @@ const API_PROCESSO_SELETIVO_URL = `${env.CMS_API_URL}/processo-seletivo`;
 
 const processoSeletivoSchema = z.object({
   aberto: z.boolean(),
-  titulo: z.string().optional(),
-  link: z.string().optional(),
+  titulo: z.string().nullable().optional(),
+  link: z.string().nullable().optional(),
 });
 
 const cmsSchema = z.object({

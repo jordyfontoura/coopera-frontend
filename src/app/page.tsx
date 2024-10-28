@@ -14,7 +14,7 @@ const mentorSchema = z.object({
   id: z.number(),
   nome: z.string(),
   esporte: z.string(),
-  depoimento: z.string().optional(),
+  depoimento: z.string().nullable().optional(),
 });
 
 const bolsistasSchema = z.array(mentorSchema);
