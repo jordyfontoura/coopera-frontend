@@ -4,5 +4,5 @@ export const NavLinks = [
   { href: "/mentores", label: "Mentores" },
   { href: "/bolsistas", label: "Bolsistas" },
   { href: "/processo-seletivo", label: "Processo Seletivo" },
-  { href: "/contato", label: "Contato" },
+  { href: "https://www.instagram.com/cooperaesportes", label: "Contato" },
 ];

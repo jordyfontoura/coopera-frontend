@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import fileImage from "@/assets/file.png";
+import fileImage from "@/assets/file.svg";
 import { env } from "@/config";
 import { z } from "zod";
 
@@ -49,7 +49,7 @@ export default async function SobrePage() {
   return (
     <>
       <main className="px-8 py-16 text-lg max-w-7xl mx-auto">
-        <h1 className="text-3xl font-bold text-primary">Coopera Esportes</h1>
+        <h1 className="text-4xl font-bold text-primary">Coopera Esportes</h1>
         <p className="mt-4">
           A Coopera Esportes é uma Organização não Governamental (ONG) sem fins
           lucrativos que, por meio do apoio da prática esportiva, visa
@@ -61,7 +61,7 @@ export default async function SobrePage() {
           disciplina nas práticas esportivas e na performance escolar e,
           acompanhamento (mentorado) dos jovens apoiados pela organização.
         </p>
-        <h1 className="text-3xl font-bold text-primary mt-8">Nossa Missão</h1>
+        <h1 className="text-4xl font-bold text-primary mt-8">Nossa Missão</h1>
         <p className="mt-4">
           Fomentar a prática do esporte como instrumento de amadurecimento
           pessoal através do suporte financeiro e do aconselhamento do jovem.
@@ -70,7 +70,7 @@ export default async function SobrePage() {
           melhora no desempenho escolar e potencializar futuras oportunidades de
           inserção profissional.
         </p>
-        <h1 className="text-3xl font-bold text-primary mt-8">Objetivos</h1>
+        <h1 className="text-4xl font-bold text-primary mt-8">Objetivos</h1>
         <p className="mt-4">
           Fomentar a prática do esporte como instrumento de amadurecimento
           pessoal através do suporte financeiro e do aconselhamento do jovem.
@@ -79,7 +79,7 @@ export default async function SobrePage() {
           melhora no desempenho escolar e potencializar futuras oportunidades de
           inserção profissional.
         </p>
-        <h1 className="text-3xl font-bold text-primary mt-8">Como funciona</h1>
+        <h1 className="text-4xl font-bold text-primary mt-8">Como funciona</h1>
         <p className="mt-4">
           Oferecemos bolsa mensal no valor de R$ 100,00 a R$ 300,00 aos atletas
           de alto rendimento de 12 a 18 anos. Buscamos apoiar jovens atletas com
@@ -105,7 +105,7 @@ export default async function SobrePage() {
             de antecedência.
           </li>
         </ul>
-        <h1 className="text-3xl font-bold text-primary mt-8">
+        <h1 className="text-4xl font-bold text-primary mt-8">
           Relatórios
         </h1>
         <p>Conheça nossa atuação</p>
@@ -118,6 +118,7 @@ export default async function SobrePage() {
                   width={100}
                   height={100}
                   alt={relatorio.nome}
+                  unoptimized
                   className="dark:invert"
                 />
                 <p>{relatorio.nome}</p>
