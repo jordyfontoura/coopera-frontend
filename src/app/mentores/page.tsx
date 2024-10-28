@@ -65,7 +65,7 @@ export default async function MentoresPage() {
                   {mentor.sobre}
                 </p>
               </div>
-              <Image loader={cloudinaryLoader} src={mentor.foto.url} alt={mentor.nome} fill />
+              <Image loader={cloudinaryLoader} src={mentor.foto.url} alt={mentor.nome} fill className="object-cover"/>
               <div className="absolute bottom-0 w-full flex flex-col items-center justify-end bg-gradient-to-t from-neutral-900 from-60% to-transparent py-4 min-h-32 transition-all duration-300 group-focus-within:opacity-0 group-hover:opacity-0">
                 <h2 className="font-bold text-lg">{mentor.nome}</h2>
                 <p className="text-sm">{mentor.cargo}</p>
