@@ -8,7 +8,8 @@ const nextConfig = {
         protocol: "https",
       }
     ]
-  }
+  },
+  staticPageGenerationTimeout: 300,
 };
 
 export default nextConfig;
