@@ -43,7 +43,7 @@ export default async function ProcessoSeletivoPage() {
       <h2 className="text-4xl font-bold text-primary">
         Processo Seletivo Coopera Esportes
       </h2>
-      <p className="mt-4">
+      <p className="mt-4 text-justify">
         Você pode participar da Coopera Esportes como bolsista. O processo de
         seleção é feito anualmente, durante um determinado período, e todos os
         candidatos que se encaixem em nossos critérios tem sua aplicação
@@ -57,7 +57,7 @@ export default async function ProcessoSeletivoPage() {
         .
       </p>
       <h2 className="text-4xl font-bold text-primary mt-8">Nossa Missão</h2>
-      <p className="mt-4">
+      <p className="mt-4 text-justify">
         Fomentar a prática do esporte como instrumento de amadurecimento pessoal
         através do suporte financeiro e do aconselhamento do jovem. Acreditamos
         no esporte como forma de transformar vidas, além do incentivo às
@@ -79,7 +79,7 @@ export default async function ProcessoSeletivoPage() {
           Por que a Coopera Esportes deve escolher você o vencedor da bolsa?
         </li>
       </ul>
-      <p className="mt-4">
+      <p className="mt-4 text-justify">
         O atleta deverá preencher seus dados e fazer o upload do vídeo no
         formulário de seleção que ficará presente neste site e aberto somente
         durante o período do processo seletivo. Caso tenha dúvidas, entre em
@@ -107,7 +107,7 @@ export default async function ProcessoSeletivoPage() {
             Processo Seletivo Coopera Esportes
           </h2>
           {processoSeletivo.titulo ? (
-            <p className="mt-4">{processoSeletivo.titulo}</p>
+            <p className="mt-4 text-justify">{processoSeletivo.titulo}</p>
           ) : null}
           {processoSeletivo.link ? (
             <Link
