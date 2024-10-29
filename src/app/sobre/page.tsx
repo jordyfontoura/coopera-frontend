@@ -81,8 +81,8 @@ export default async function SobrePage() {
         </p>
         <h1 className="text-4xl font-bold text-primary mt-8">Como funciona</h1>
         <p className="mt-4">
-          Oferecemos bolsa mensal no valor de R$ 100,00 a R$ 300,00 aos atletas
-          de alto rendimento de 12 a 18 anos. Buscamos apoiar jovens atletas com
+          Oferecemos bolsa mensal no valor de R$ 100,00 a R$ 200,00 aos atletas
+          de alto rendimento de 14 a 18 anos. Buscamos apoiar jovens atletas com
           condições financeiras menos privilegiadas. Os recursos devem ser
           utilizados para cobrir gastos com alimentação, saúde, treinamento,
           aquisição de equipamentos, pagamento de taxas de inscrição em

@@ -72,11 +72,11 @@ export default async function ProcessoSeletivoPage() {
       <ul className="list-disc ml-6">
         <li>Vídeo de 2 minutos e 30 segundos de apresentação sobre:</li>
         <li>Histórico familiar</li>
-        <li>Histórico no esporte e, principalmente histórico de vitórias</li>
+        <li>Histórico no esporte e, principalmente, histórico de vitórias</li>
         <li>Rotina e dia-a-dia</li>
         <li>Interação com a sua comunidade</li>
         <li>
-          Por que a Coopera Esportes deve escolher você o vencedor da bolsa ?
+          Por que a Coopera Esportes deve escolher você o vencedor da bolsa?
         </li>
       </ul>
       <p className="mt-4">
@@ -104,7 +104,7 @@ export default async function ProcessoSeletivoPage() {
       {processoSeletivo.aberto ? (
         <>
           <h2 className="text-4xl font-bold text-primary mt-8">
-            Processo Seletivo Coopera Esportes {new Date().getFullYear()}{" "}
+            Processo Seletivo Coopera Esportes
           </h2>
           {processoSeletivo.titulo ? (
             <p className="mt-4">{processoSeletivo.titulo}</p>
@@ -115,6 +115,7 @@ export default async function ProcessoSeletivoPage() {
               className="px-8 py-4 mt-8 block rounded-md max-w-96 mx-auto text-center text-xl
           transition-colors hover:bg-secondary
           font-bold text-neutral-50 bg-primary"
+              target="_blank"
             >
               Clique aqui para participar
             </Link>
