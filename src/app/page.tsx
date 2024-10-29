@@ -96,11 +96,11 @@ export default async function HomePage() {
         <section className="px-8 py-24 bg-primary text-neutral-50 text-4xl">
           <ul className="max-w-7xl mx-auto flex flex-wrap space-y-8 sm:space-x-8 font-bold justify-start items-center md:justify-around md:space-y-0">
             <li className="m-0">
-              + de <AutoIncrement duration={4_000} value={320} maxTimes={1} />h
+              + de <AutoIncrement duration={4_000} value={500} maxTimes={1} />h
               de mentoria
             </li>
             <li className="m-0">
-              <AutoIncrement duration={4_000} value={10} maxTimes={1} />{" "}
+              <AutoIncrement duration={4_000} value={20} maxTimes={1} />{" "}
               mentores
             </li>
             <li className="m-0">
