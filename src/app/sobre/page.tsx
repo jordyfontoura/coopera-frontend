@@ -1,9 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import fileImage from "@/assets/file.svg";
-import { env } from "@/config";
-import { z } from "zod";
-
 
 
 export default async function SobrePage() {
