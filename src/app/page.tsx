@@ -62,6 +62,8 @@ export default async function HomePage() {
           alt="Hero image"
           layout="fill"
           objectFit="cover"
+          priority
+          loading="eager"
         />
         <div className="absolute inset-0 flex flex-col justify-center items-center text-neutral-50 px-8">
           <h1 className="text-5xl font-bold">
