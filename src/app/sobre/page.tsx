@@ -5,26 +5,6 @@ import { env } from "@/config";
 import { z } from "zod";
 
 
-const API_RELATORIOS_URL = `${env.CMS_API_URL}/relatorio?populate[relatorios][populate][arquivo][fields][0]=url`;
-
-const cmsFileSchema = z.object({
-  url: z.string(),
-});
-
-const relatoriosSchema = z.object({
-  relatorios: z.array(z.object({
-    id: z.number(),
-    nome: z.string(),
-    arquivo: cmsFileSchema
-  }))
-});
-
-
-const cmsSchema = z.object({
-  data: z.any(),
-  meta: z.any(),
-});
-
 
 export default async function SobrePage() {
   // const response = await fetch(API_RELATORIOS_URL, {
