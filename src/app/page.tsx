@@ -100,11 +100,11 @@ export default async function HomePage() {
               de mentoria
             </li>
             <li className="m-0">
-              <AutoIncrement duration={4_000} value={20} maxTimes={1} />{" "}
+              <AutoIncrement duration={4_000} value={10} maxTimes={1} />{" "}
               mentores
             </li>
             <li className="m-0">
-              + de <AutoIncrement duration={4_000} value={25} maxTimes={1} />{" "}
+              + de <AutoIncrement duration={4_000} value={20} maxTimes={1} />{" "}
               mentorados
             </li>
           </ul>
