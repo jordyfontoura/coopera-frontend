@@ -50,7 +50,7 @@ export default async function SobrePage() {
     <>
       <main className="px-8 py-16 text-lg max-w-7xl mx-auto">
         <h1 className="text-4xl font-bold text-primary">Coopera Esportes</h1>
-        <p className="mt-4">
+        <p className="mt-4 text-justify">
           A Coopera Esportes é uma Organização não Governamental (ONG) sem fins
           lucrativos que, por meio do apoio da prática esportiva, visa
           contribuir para o desenvolvimento integral do adolescente. Acreditamos
@@ -62,7 +62,7 @@ export default async function SobrePage() {
           acompanhamento (mentorado) dos jovens apoiados pela organização.
         </p>
         <h1 className="text-4xl font-bold text-primary mt-8">Nossa Missão</h1>
-        <p className="mt-4">
+        <p className="mt-4 text-justify">
           Fomentar a prática do esporte como instrumento de amadurecimento
           pessoal através do suporte financeiro e do aconselhamento do jovem.
           Acreditamos no esporte como forma de transformar vidas, além do
@@ -71,7 +71,7 @@ export default async function SobrePage() {
           inserção profissional.
         </p>
         <h1 className="text-4xl font-bold text-primary mt-8">Objetivos</h1>
-        <p className="mt-4">
+        <p className="mt-4 text-justify">
           Fomentar a prática do esporte como instrumento de amadurecimento
           pessoal através do suporte financeiro e do aconselhamento do jovem.
           Acreditamos no esporte como forma de transformar vidas, além do
@@ -80,7 +80,7 @@ export default async function SobrePage() {
           inserção profissional.
         </p>
         <h1 className="text-4xl font-bold text-primary mt-8">Como funciona</h1>
-        <p className="mt-4">
+        <p className="mt-4 text-justify">
           Oferecemos bolsa mensal no valor de R$ 100,00 a R$ 200,00 aos atletas
           de alto rendimento de 14 a 18 anos. Buscamos apoiar jovens atletas com
           condições financeiras menos privilegiadas. Os recursos devem ser
