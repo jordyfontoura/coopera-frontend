@@ -63,7 +63,6 @@ export default async function HomePage() {
           layout="fill"
           objectFit="cover"
           priority
-          loading="eager"
         />
         <div className="absolute inset-0 flex flex-col justify-center items-center text-neutral-50 px-8">
           <h1 className="text-5xl font-bold">
@@ -181,7 +180,7 @@ export default async function HomePage() {
             </span>
           </Link>
           <Link
-            href="/contato"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfJrMbkQOXDfMtff8gLH6RmNgB0btUvrldliE14Y5xauymb_w/viewform?usp=sf_link"
             className="bg-primary text-center text-neutral-50 font-bold text-3xl aspect-video relative"
           >
             <Image
