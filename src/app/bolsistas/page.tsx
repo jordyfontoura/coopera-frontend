@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default async function BolsistasPage() {
   const bolsistas = await getBolsistas();
-  const bolsistasVisiveis = bolsistas.filter((bolsista) => bolsista.visivel);
+  const bolsistasVisiveis = bolsistas.filter((bolsista) => bolsista.visivel && bolsista.ativo);
 
   return (
     <main className="px-8 py-16 text-neutral-50">

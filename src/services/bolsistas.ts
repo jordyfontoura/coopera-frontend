@@ -14,6 +14,7 @@ const bolsistaSchema = z.object({
   foto: cmsPictureSchema,
   depoimento: z.string().nullable().optional(),
   visivel: z.boolean(),
+  ativo: z.boolean(),
 });
 
 const cmsSchema = z.object({

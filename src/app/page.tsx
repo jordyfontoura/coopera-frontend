@@ -11,14 +11,16 @@ import { getMentores } from "@/services/mentores";
 export default async function HomePage() {
   const bolsistas = await getBolsistas();
   const mentores = await getMentores();
+  const bolsistasAtivos = bolsistas.filter((bolsista) => bolsista.ativo);
   const bolsistasComDepoimentos = bolsistas
     .filter(
-      (bolsista) => bolsista.visivel && bolsista.depoimento && bolsista.depoimento.trim().length > 0
+      (bolsista) => bolsista.depoimento && bolsista.depoimento.trim().length > 0
     )
     .map((bolsista) => ({
       ...bolsista,
       depoimento: bolsista.depoimento!.trim(),
-    }));
+    }))
+    .sort((a, b) => b.depoimento.length - a.depoimento.length);
 
   return (
     <>
@@ -71,7 +73,7 @@ export default async function HomePage() {
               mentores
             </li>
             <li className="m-0">
-              + de <AutoIncrement duration={4_000} value={bolsistas.length - 1} maxTimes={1} />{" "}
+              + de <AutoIncrement duration={4_000} value={bolsistasAtivos.length - 1} maxTimes={1} />{" "}
               mentorados
             </li>
           </ul>
