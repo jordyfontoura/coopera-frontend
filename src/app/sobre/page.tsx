@@ -48,7 +48,7 @@ export default async function SobrePage() {
 
   return (
     <>
-      <main className="px-8 py-16 text-lg max-w-7xl mx-auto">
+      <main className="px-8 py-24 text-lg max-w-7xl mx-auto">
         <h1 className="text-4xl font-bold text-primary">Coopera Esportes</h1>
         <p className="mt-4 text-justify">
           A Coopera Esportes é uma Organização não Governamental (ONG) sem fins
@@ -103,7 +103,7 @@ export default async function SobrePage() {
         <ul className="mt-4 flex flex-wrap items-stretch">
           {relatorios.map((relatorio) => (
             <Link href={relatorio.arquivo.url} key={relatorio.id}>
-              <li className="p-2 flex flex-col items-center">
+              <li className="p-2 flex flex-col items-center transition-all scale-100 hover:scale-110">
                 <Image
                   src={fileImage}
                   width={100}

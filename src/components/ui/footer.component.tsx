@@ -15,7 +15,7 @@ export function Footer() {
             <Image src={instagramLogo} alt="Instagram" width={26} height={26} className="dark:invert"/>
           </Link>
         </div>
-        <ul className="flex flex-col items-center space-y-3 md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-0 md:space-y-0">
+        <ul className="flex flex-col items-center space-y-3 md:grid md:grid-cols-3-auto md:gap-x-8 md:gap-y-0 md:space-y-0">
           {NavLinks.map((link) => (
             <li key={link.href}>
               <Link

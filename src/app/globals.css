@@ -27,4 +27,16 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+
+  .grid-cols-3-auto {
+    grid-template-columns: repeat(3, auto);
+  }
+
+  .btn-secondary {
+    @apply text-background bg-primary px-8 py-3 border text-center font-bold rounded-md transition-all duration-300 hover:bg-secondary hover:text-background;
+  }
+
+  .btn-tertiary {
+    @apply text-tertiary px-8 py-3 border text-center border-tertiary font-bold rounded-md transition-all duration-300 hover:bg-tertiary hover:text-background;
+  }
 }

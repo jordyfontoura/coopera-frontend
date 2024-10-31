@@ -56,7 +56,7 @@ export default async function HomePage() {
             <div className="mt-8">
               <Link
                 href="/sobre"
-                className="text-tertiary px-8 py-3 border border-tertiary font-bold rounded-md transition-all duration-300 hover:bg-tertiary hover:text-background"
+                className="btn-tertiary"
               >
                 Saiba mais
               </Link>
@@ -64,16 +64,16 @@ export default async function HomePage() {
           </div>
         </section>
         <section className="px-8 py-24 bg-primary text-neutral-50 text-4xl">
-          <ul className="max-w-7xl mx-auto flex flex-wrap space-y-8 sm:space-x-8 font-bold justify-start items-center md:justify-around md:space-y-0">
-            <li className="m-0">
+          <ul className="max-w-7xl mx-auto flex flex-wrap text-center md:text-left sm:space-x-8 font-bold justify-start items-center md:justify-around md:space-y-0">
+            <li className="m-0 w-full md:w-auto">
               + de <HorasMentorias />h
               de mentoria
             </li>
-            <li className="m-0">
+            <li className="m-0 w-full md:w-auto">
               <AutoIncrement duration={4_000} value={mentores.length} maxTimes={1} />{" "}
               mentores
             </li>
-            <li className="m-0">
+            <li className="m-0 w-full md:w-auto">
               + de <AutoIncrement duration={4_000} value={bolsistasAtivos.length - 1} maxTimes={1} />{" "}
               mentorados
             </li>
@@ -81,7 +81,7 @@ export default async function HomePage() {
         </section>
         <section className="px-8 py-24">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl font-bold text-primary">Nossa Atuação</h2>
+            <h2 className="text-3xl font-bold text-foreground">Nossa Atuação</h2>
             <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
               <li className="shadow-sm p-8 rounded-md border dark:bg-neutral-900 dark:border-neutral-800">
                 <h3 className="text-2xl font-bold text-primary">Mentoria</h3>
@@ -114,7 +114,7 @@ export default async function HomePage() {
             </ul>
           </div>
           <div className="max-w-7xl mx-auto mt-12">
-            <h2 className="text-3xl font-bold text-primary">
+            <h2 className="text-3xl font-bold text-foreground">
               Conheça o depoimento de nossos bolsistas
             </h2>
             <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">

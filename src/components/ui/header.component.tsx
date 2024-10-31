@@ -4,11 +4,13 @@ import Link from "next/link";
 import { Logo } from "./logo.component";
 import { NavLinks } from "@/constants";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   function toggleMenu() {
     setIsMenuOpen((prev) => !prev);
@@ -60,9 +62,10 @@ export function Header() {
             </svg>
           </div>
           {NavLinks.map((link) => (
-            <li key={link.href} className="text-center">
+            <li key={link.href} className={`text-center ${link.href === pathname ? 'text-tertiary' : ''}`}>
               <Link
                 href={link.href}
+                target={link.target}
                 className="transition-all duration-300 hover:text-tertiary flex items-center justify-center h-full w-full px-4 py-2 text-nowrap text-xl md:text-base"
               >
                 {link.label}

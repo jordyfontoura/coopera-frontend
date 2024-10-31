@@ -9,7 +9,7 @@ export default async function BolsistasPage() {
   const bolsistasVisiveis = bolsistas.filter((bolsista) => bolsista.visivel && bolsista.ativo);
 
   return (
-    <main className="px-8 py-16 text-neutral-50">
+    <main className="px-8 py-24 text-neutral-50">
       <nav>
         <ul className="grid grid-cols-1 items-center space-y-4 md:grid md:space-y-0 md:grid-cols-3 md:gap-4 lg:grid-cols-5 xl:grid-cols-7">
           {bolsistasVisiveis.map((bolsista) => (

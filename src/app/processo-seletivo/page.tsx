@@ -39,7 +39,7 @@ export default async function ProcessoSeletivoPage() {
   const processoSeletivo = processoSeletivoSchema.parse(cmsJson.data);
 
   return (
-    <main className="px-8 py-16 text-lg max-w-7xl mx-auto">
+    <main className="px-8 py-24 text-lg max-w-7xl mx-auto">
       <h2 className="text-4xl font-bold text-primary">
         Processo Seletivo Coopera Esportes
       </h2>
@@ -112,9 +112,7 @@ export default async function ProcessoSeletivoPage() {
           {processoSeletivo.link ? (
             <Link
               href={processoSeletivo.link}
-              className="px-8 py-4 mt-8 block rounded-md max-w-96 mx-auto text-center text-xl
-          transition-colors hover:bg-secondary
-          font-bold text-neutral-50 bg-primary"
+              className="max-w-96 mx-auto block mt-8 btn-secondary dark:bg-transparent dark:btn-tertiary"
               target="_blank"
             >
               Clique aqui para participar

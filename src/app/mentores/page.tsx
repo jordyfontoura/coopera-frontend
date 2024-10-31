@@ -9,7 +9,7 @@ export default async function MentoresPage() {
   const mentoresVisiveis = mentores.filter((mentor) => mentor.visivel);
 
   return (
-    <main className="px-8 py-16">
+    <main className="px-8 py-24">
       <nav>
         <ul className="grid grid-cols-1 items-center space-y-4 md:grid md:space-y-0 md:grid-cols-2 md:gap-4 lg:grid-cols-3 xl:grid-cols-4">
           {mentoresVisiveis.map((mentor) => (
