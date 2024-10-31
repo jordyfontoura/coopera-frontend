@@ -24,7 +24,7 @@ export function Header() {
         <Link href="/" tabIndex={-1}>
           <Logo />
         </Link>
-        <button className="md:hidden" onClick={toggleMenu}>
+        <button className="md:hidden" name="menu-hamburguer" title="Clique para abrir o menu" onClick={toggleMenu}>
           <svg
             className="w-6 h-6"
             fill="none"
