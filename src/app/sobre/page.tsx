@@ -70,15 +70,6 @@ export default async function SobrePage() {
           melhora no desempenho escolar e potencializar futuras oportunidades de
           inserção profissional.
         </p>
-        <h1 className="text-4xl font-bold text-primary mt-8">Objetivos</h1>
-        <p className="mt-4 text-justify">
-          Fomentar a prática do esporte como instrumento de amadurecimento
-          pessoal através do suporte financeiro e do aconselhamento do jovem.
-          Acreditamos no esporte como forma de transformar vidas, além do
-          incentivo às práticas esportivas, buscamos criar condições para a
-          melhora no desempenho escolar e potencializar futuras oportunidades de
-          inserção profissional.
-        </p>
         <h1 className="text-4xl font-bold text-primary mt-8">Como funciona</h1>
         <p className="mt-4 text-justify">
           Oferecemos bolsa mensal no valor de R$ 100,00 a R$ 200,00 aos atletas

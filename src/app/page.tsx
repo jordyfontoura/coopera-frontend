@@ -5,54 +5,20 @@ import heroImage from "@/assets/home-hero.png";
 import bolsistaImage from "@/assets/seja-bolsista.png";
 import parceiroImage from "@/assets/seja-parceiro.png";
 import { AutoIncrement } from "@/components/ui/auto-increment.component";
-import { env } from "@/config";
-import { z } from "zod";
-
-const API_BOLSISTAS_URL = `${env.CMS_API_URL}/bolsistas?pagination[limit]=1000`;
-
-const mentorSchema = z.object({
-  id: z.number(),
-  nome: z.string(),
-  esporte: z.string(),
-  depoimento: z.string().nullable().optional(),
-});
-
-const bolsistasSchema = z.array(mentorSchema);
-
-const cmsSchema = z.object({
-  data: z.any(),
-  meta: z.any(),
-});
+import { getBolsistas } from "@/services/bolsistas";
+import { getMentores } from "@/services/mentores";
 
 export default async function HomePage() {
-  const response = await fetch(API_BOLSISTAS_URL, {
-    headers: {
-      Authorization: `Bearer ${env.CMS_API_TOKEN}`,
-    },
-  });
-
-  if (!response.ok) {
-    throw new Error(`Falha ao carregar bolsistas via API ${API_BOLSISTAS_URL}`);
-  }
-
-  const bolsistasJson = await response.json().catch(() => {
-    throw new Error(
-      `Falha ao fazer parse do JSON retornado pela API ${API_BOLSISTAS_URL}`
-    );
-  });
-
-  const cmsJson = cmsSchema.parse(bolsistasJson);
-
-  const bolsistasComDepoimentos = bolsistasSchema
-    .parse(cmsJson.data)
+  const bolsistas = await getBolsistas();
+  const mentores = await getMentores();
+  const bolsistasComDepoimentos = bolsistas
     .filter(
-      (bolsista) => bolsista.depoimento && bolsista.depoimento.trim().length > 0
+      (bolsista) => bolsista.visivel && bolsista.depoimento && bolsista.depoimento.trim().length > 0
     )
     .map((bolsista) => ({
       ...bolsista,
       depoimento: bolsista.depoimento!.trim(),
-    }))
-    .sort((a, b) => a.nome.localeCompare(b.nome));
+    }));
 
   return (
     <>
@@ -101,11 +67,11 @@ export default async function HomePage() {
               de mentoria
             </li>
             <li className="m-0">
-              <AutoIncrement duration={4_000} value={10} maxTimes={1} />{" "}
+              <AutoIncrement duration={4_000} value={mentores.length} maxTimes={1} />{" "}
               mentores
             </li>
             <li className="m-0">
-              + de <AutoIncrement duration={4_000} value={20} maxTimes={1} />{" "}
+              + de <AutoIncrement duration={4_000} value={bolsistas.length - 1} maxTimes={1} />{" "}
               mentorados
             </li>
           </ul>
