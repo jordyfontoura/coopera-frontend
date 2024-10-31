@@ -13,7 +13,7 @@ export function Logo(props: ILogoProps) {
       </div>
       <div className="flex flex-col justify-center text-center">
         <h1 className="text-md font-bold uppercase leading-4 text-primary">Coopera</h1>
-        <p className="text-sm uppercase leading-3 text-tertiary">Esportes</p>
+        <p className="text-sm uppercase leading-3 text-tertiary font-bold">Esportes</p>
       </div>
     </div>
   );
