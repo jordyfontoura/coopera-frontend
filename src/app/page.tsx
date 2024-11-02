@@ -62,7 +62,7 @@ export default async function HomePage() {
           </div>
         </section>
         <section className="px-8 py-24 bg-primary text-neutral-50 text-4xl">
-          <ul className="max-w-7xl mx-auto flex flex-wrap text-center md:text-left sm:space-x-8 font-bold justify-start items-center md:justify-around md:space-y-0">
+          <ul className="max-w-7xl mx-auto flex flex-wrap text-left sm:text-center gap-8 md:text-left sm:space-x-8 font-bold justify-start items-center md:justify-around">
             <li className="m-0 w-full md:w-auto">
               + de <AutoIncrement duration={4_000} value={relatorios.horasMentoria} maxTimes={1} />h
               de mentoria
