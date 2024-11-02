@@ -6,13 +6,11 @@ import bolsistaImage from "@/assets/seja-bolsista.png";
 import parceiroImage from "@/assets/seja-parceiro.png";
 import { AutoIncrement } from "@/components/ui/auto-increment.component";
 import { getBolsistas } from "@/services/bolsistas";
-import { getMentores } from "@/services/mentores";
-import { HorasMentorias } from "./horas-mentorias";
+import { getRelatorios } from "@/services/relatorios";
 
 export default async function HomePage() {
+  const relatorios = await getRelatorios();
   const bolsistas = await getBolsistas();
-  const mentores = await getMentores();
-  const bolsistasAtivos = bolsistas.filter((bolsista) => bolsista.ativo);
   const bolsistasComDepoimentos = bolsistas
     .filter(
       (bolsista) => bolsista.depoimento && bolsista.depoimento.trim().length > 0
@@ -66,15 +64,15 @@ export default async function HomePage() {
         <section className="px-8 py-24 bg-primary text-neutral-50 text-4xl">
           <ul className="max-w-7xl mx-auto flex flex-wrap text-center md:text-left sm:space-x-8 font-bold justify-start items-center md:justify-around md:space-y-0">
             <li className="m-0 w-full md:w-auto">
-              + de <HorasMentorias />h
+              + de <AutoIncrement duration={4_000} value={relatorios.horasMentoria} maxTimes={1} />h
               de mentoria
             </li>
             <li className="m-0 w-full md:w-auto">
-              <AutoIncrement duration={4_000} value={mentores.length} maxTimes={1} />{" "}
+              <AutoIncrement duration={4_000} value={relatorios.totalMentores} maxTimes={1} />{" "}
               mentores
             </li>
             <li className="m-0 w-full md:w-auto">
-              + de <AutoIncrement duration={4_000} value={bolsistasAtivos.length - 1} maxTimes={1} />{" "}
+              + de <AutoIncrement duration={4_000} value={relatorios.totalMentorados} maxTimes={1} />{" "}
               mentorados
             </li>
           </ul>

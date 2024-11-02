@@ -1,50 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import fileImage from "@/assets/file.svg";
+import { getRelatorios } from "@/services/relatorios";
 
 
 export default async function SobrePage() {
-  // const response = await fetch(API_RELATORIOS_URL, {
-  //   headers: {
-  //     Authorization: `Bearer ${env.CMS_API_TOKEN}`,
-  //   },
-  // });
-
-  // if (!response.ok) {
-  //   throw new Error(`Falha ao carregar bolsistas via API ${API_RELATORIOS_URL}`);
-  // }
-
-  // const relatoriosJson = await response.json().catch(() => {
-  //   throw new Error(
-  //     `Falha ao fazer parse do JSON retornado pela API ${API_RELATORIOS_URL}`
-  //   );
-  // });
-
-  // const cmsJson = cmsSchema.parse(relatoriosJson);
-  // const relatorios = relatoriosSchema.parse(cmsJson.data).relatorios;
-  const relatorios = [
-    {
-      id: 1,
-      nome: "Relatório 2021",
-      arquivo: {
-        url: "https://drive.google.com/file/d/1UdwFmrOiKomrBbhGqVQz3S--rRJltQNB/view?usp=drive_link"
-      }
-    },
-    {
-      id: 2,
-      nome: "Relatório 2022",
-      arquivo: {
-        url: "https://drive.google.com/file/d/1ZT9xvGixPGAz9MfeO9qfa-HuMD8_kOi5/view?usp=drive_link"
-      }
-    },
-    {
-      id: 3,
-      nome: "Relatório 2023",
-      arquivo: {
-        url: "https://drive.google.com/file/d/1sJrJudSOKsDFanARQvbUeJTQGAHNaLgo/view?usp=drive_link"
-      }
-    }
-  ]
+  const relatorios = await getRelatorios();
 
   return (
     <>
@@ -101,8 +62,8 @@ export default async function SobrePage() {
         </h1>
         <p>Conheça nossa atuação</p>
         <ul className="mt-4 flex flex-wrap items-stretch">
-          {relatorios.map((relatorio) => (
-            <Link href={relatorio.arquivo.url} key={relatorio.id}>
+          {relatorios.relatorios.map((relatorio) => (
+            <Link href={relatorio.link} key={relatorio.id}>
               <li className="p-2 flex flex-col items-center transition-all scale-100 hover:scale-110">
                 <Image
                   src={fileImage}

@@ -13,7 +13,6 @@ const mentorSchema = z.object({
   cargo: z.string(),
   sobre: z.string(),
   foto: cmsPictureSchema,
-  visivel: z.boolean(),
 });
 
 const cmsSchema = z.object({

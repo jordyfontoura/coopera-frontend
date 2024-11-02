@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default async function MentoresPage() {
   const mentores = await getMentores();
-  const mentoresVisiveis = mentores.filter((mentor) => mentor.visivel);
+  const mentoresVisiveis = mentores;
 
   return (
     <main className="px-8 py-24">
