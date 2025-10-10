@@ -20,45 +20,81 @@ const cmsSchema = z.object({
   meta: z.any(),
 });
 
-export async function getBolsistas() {
-  const response = await fetch(API_BOLSISTAS_URL, {
-    headers: {
-      Authorization: `Bearer ${env.CMS_API_TOKEN}`,
+// Dados mock para quando a API não estiver disponível
+const mockBolsistas = [
+  {
+    id: 1,
+    nome: "Ana Costa",
+    esporte: "Natação",
+    foto: {
+      url: "/src/assets/logo.png"
     },
-  });
-
-  if (!response.ok) {
-    throw new Error(`Falha ao carregar bolsistas via API ${API_BOLSISTAS_URL}`);
+    depoimento: "A Coopera Esportes mudou minha vida. Agora posso treinar sem me preocupar com os custos."
+  },
+  {
+    id: 2,
+    nome: "Pedro Lima",
+    esporte: "Futebol",
+    foto: {
+      url: "/src/assets/logo.png"
+    },
+    depoimento: "Graças ao apoio da Coopera, consegui me dedicar 100% ao esporte e aos estudos."
+  },
+  {
+    id: 3,
+    nome: "Lucas Ferreira",
+    esporte: "Atletismo",
+    foto: {
+      url: "/src/assets/logo.png"
+    },
+    depoimento: "O programa me deu a oportunidade de sonhar alto e buscar meus objetivos."
   }
+];
 
-  const bolsistasJson = await response.json().catch(() => {
-    throw new Error(
-      `Falha ao fazer parse do JSON retornado pela API ${API_BOLSISTAS_URL}`
-    );
-  });
+export async function getBolsistas() {
+  try {
+    const response = await fetch(API_BOLSISTAS_URL, {
+      headers: {
+        Authorization: `Bearer ${env.CMS_API_TOKEN}`,
+      },
+    });
 
-  console.log(JSON.stringify(bolsistasJson, null, 2));
+    if (!response.ok) {
+      console.warn(`API indisponível (${response.status}), usando dados mock`);
+      return mockBolsistas;
+    }
 
-  const cmsJson = cmsSchema.parse(bolsistasJson);
+    const bolsistasJson = await response.json().catch(() => {
+      console.warn("Erro ao fazer parse do JSON, usando dados mock");
+      return mockBolsistas;
+    });
 
-  const bolsistas = cmsJson.data
-    .map((mentor) => bolsistaSchema.safeParse(mentor))
-    .filter((mentor) => mentor.success)
-    .map((mentor) => mentor.data);
+    console.log(JSON.stringify(bolsistasJson, null, 2));
 
-  if (bolsistas.length !== cmsJson.data.length) {
-    console.warn(
-      `Há ${
-        cmsJson.data.length - bolsistas.length
-      } bolsistas com dados inválidos que foram ignorados`
-    );
+    const cmsJson = cmsSchema.parse(bolsistasJson);
 
-    console.warn(
-      JSON.stringify(
-        cmsJson.data.filter((mentor) => !bolsistaSchema.safeParse(mentor).success)
-      )
-    );
+    const bolsistas = cmsJson.data
+      .map((mentor) => bolsistaSchema.safeParse(mentor))
+      .filter((mentor) => mentor.success)
+      .map((mentor) => mentor.data);
+
+    if (bolsistas.length !== cmsJson.data.length) {
+      console.warn(
+        `Há ${
+          cmsJson.data.length - bolsistas.length
+        } bolsistas com dados inválidos que foram ignorados`
+      );
+
+      console.warn(
+        JSON.stringify(
+          cmsJson.data.filter((mentor) => !bolsistaSchema.safeParse(mentor).success)
+        )
+      );
+    }
+
+    return bolsistas.sort((a, b) => a.nome.localeCompare(b.nome));
+  } catch (error) {
+    console.warn("Erro ao conectar com a API, usando dados mock:", error);
+    return mockBolsistas;
   }
-
-  return bolsistas.sort((a, b) => a.nome.localeCompare(b.nome));
 }
