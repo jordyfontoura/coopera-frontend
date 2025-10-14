@@ -8,12 +8,14 @@
   --primary: #00629B;
   --secondary: #023D54;
   --tertiary: #E18B22;
+  --tertiary-adaptive: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --tertiary-adaptive: #E18B22;
   }
 }
 
@@ -38,5 +40,20 @@ body {
 
   .btn-tertiary {
     @apply text-tertiary px-8 py-3 border text-center border-tertiary font-bold rounded-md transition-all duration-300 hover:bg-tertiary hover:text-background;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
