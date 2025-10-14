@@ -29,7 +29,7 @@ export default async function MentoresPage() {
               tabIndex={0}
             >
               {/* Overlay com informações detalhadas */}
-              <div className="absolute inset-0 transition-all duration-500 z-10 opacity-0 hidden lg:flex group-hover:flex group-hover:opacity-100 group-focus-within:opacity-100 bg-gradient-to-br from-primary/90 via-blue-800/90 to-primary/90 backdrop-blur-sm flex-col items-center px-6 py-8 space-y-4 overflow-y-auto">
+              <div className="absolute inset-0 transition-all duration-500 z-10 opacity-0 hidden lg:flex group-hover:flex group-hover:opacity-100 group-focus-within:opacity-100 bg-gradient-to-br from-neutral-900/85 via-neutral-800/85 to-neutral-900/85 backdrop-blur-sm flex-col items-center px-6 py-8 space-y-4 overflow-y-auto">
                 <div className="flex flex-col items-center text-center">
                   <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-4">
                     <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">

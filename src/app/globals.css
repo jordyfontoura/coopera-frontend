@@ -8,12 +8,14 @@
   --primary: #00629B;
   --secondary: #023D54;
   --tertiary: #E18B22;
+  --tertiary-adaptive: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --tertiary-adaptive: #E18B22;
   }
 }
 

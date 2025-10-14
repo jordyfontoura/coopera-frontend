@@ -14,6 +14,7 @@ const config: Config = {
         primary: "var(--primary)",
         secondary: "var(--secondary)",
         tertiary: "var(--tertiary)",
+        "tertiary-adaptive": "var(--tertiary-adaptive)",
       },
     },
   },

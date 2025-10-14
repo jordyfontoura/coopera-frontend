@@ -65,7 +65,6 @@ export default async function SobrePage() {
               competições e/ou transporte para participação de eventos educacionais
             </p>
             
-            <div className="bg-tertiary/10 rounded-xl p-6 border border-tertiary/20">
               <h3 className="text-xl font-bold text-tertiary mb-4">
                 Como acompanhamos nossos atletas:
               </h3>
@@ -101,7 +100,7 @@ export default async function SobrePage() {
                   </span>
                 </li>
               </ul>
-            </div>
+            
           </div>
         </section>
 
@@ -139,7 +138,7 @@ export default async function SobrePage() {
         </section>
       </main>
       
-      <section className="bg-gradient-to-r from-primary via-blue-700 to-primary py-24 px-8 text-center text-neutral-50 relative overflow-hidden">
+      <section className="bg-gradient-to-br from-primary via-blue-700 to-primary py-24 px-8 text-center text-neutral-50 relative overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="relative z-10 max-w-4xl mx-auto">
           <p className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-relaxed">

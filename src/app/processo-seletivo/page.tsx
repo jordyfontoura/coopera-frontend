@@ -27,7 +27,7 @@ export default async function ProcessoSeletivoPage() {
       `Falha ao carregar processo seletivo via API ${API_PROCESSO_SELETIVO_URL}`
     );
   }
-
+  
   const processoSeletivoJson = await response.json().catch(() => {
     throw new Error(
       `Falha ao fazer parse do JSON retornado pela API ${API_PROCESSO_SELETIVO_URL}`
@@ -89,56 +89,58 @@ export default async function ProcessoSeletivoPage() {
         <div className="bg-white dark:bg-neutral-900 rounded-2xl p-8 shadow-lg border border-neutral-200 dark:border-neutral-700">
           <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-8">Como Funciona</h2>
           
-          {/* 1ª Fase */}
-          <div className="mb-8">
-            <div className="bg-tertiary/10 rounded-xl p-6 border border-tertiary/20 mb-6">
-              <h3 className="text-2xl font-bold text-tertiary mb-4 flex items-center">
-                <div className="w-8 h-8 bg-tertiary text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">1</div>
-                1º FASE – CANDIDATURA
-              </h3>
-              <p className="text-neutral-700 dark:text-neutral-300 mb-4">
-                Vídeo de 2 minutos e 30 segundos de apresentação sobre:
-              </p>
-              <ul className="space-y-2">
-                <li className="flex items-start">
-                  <div className="w-2 h-2 bg-tertiary rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-neutral-700 dark:text-neutral-300">Histórico familiar</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="w-2 h-2 bg-tertiary rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-neutral-700 dark:text-neutral-300">Histórico no esporte e, principalmente, histórico de vitórias</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="w-2 h-2 bg-tertiary rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-neutral-700 dark:text-neutral-300">Rotina e dia-a-dia</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="w-2 h-2 bg-tertiary rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-neutral-700 dark:text-neutral-300">Interação com a sua comunidade</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="w-2 h-2 bg-tertiary rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-neutral-700 dark:text-neutral-300">
-                    Por que a Coopera Esportes deve escolher você o vencedor da bolsa?
-                  </span>
-                </li>
-              </ul>
-            </div>
-            <p className="text-lg leading-relaxed text-neutral-700 dark:text-neutral-300">
+          {/* Introdução */}
+          <div className="mb-12">
+            <p className="text-lg leading-relaxed text-neutral-700 dark:text-neutral-300 text-justify">
               O atleta deverá preencher seus dados e fazer o upload do vídeo no
               formulário de seleção que ficará presente neste site e aberto somente
               durante o período do processo seletivo. Caso tenha dúvidas, entre em
-              contato conosco.
+              contato conosco. Por meio do nosso instagram ou pelo link do formulário.
             </p>
           </div>
 
+          {/* 1ª Fase */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-bold text-tertiary mb-6 flex items-center">
+              <div className="w-8 h-8 bg-tertiary text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">1</div>
+              1º FASE – CANDIDATURA
+            </h3>
+            <p className="text-neutral-700 dark:text-neutral-300 mb-6">
+              Vídeo de 2 minutos e 30 segundos de apresentação sobre:
+            </p>
+            <ul className="space-y-3">
+              <li className="flex items-start">
+                <div className="w-2 h-2 bg-tertiary rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                <span className="text-neutral-700 dark:text-neutral-300">Histórico familiar</span>
+              </li>
+              <li className="flex items-start">
+                <div className="w-2 h-2 bg-tertiary rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                <span className="text-neutral-700 dark:text-neutral-300">Histórico no esporte e, principalmente, histórico de vitórias</span>
+              </li>
+              <li className="flex items-start">
+                <div className="w-2 h-2 bg-tertiary rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                <span className="text-neutral-700 dark:text-neutral-300">Rotina e dia-a-dia</span>
+              </li>
+              <li className="flex items-start">
+                <div className="w-2 h-2 bg-tertiary rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                <span className="text-neutral-700 dark:text-neutral-300">Interação com a sua comunidade</span>
+              </li>
+              <li className="flex items-start">
+                <div className="w-2 h-2 bg-tertiary rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                <span className="text-neutral-700 dark:text-neutral-300">
+                  Por que a Coopera Esportes deve escolher você o vencedor da bolsa?
+                </span>
+              </li>
+            </ul>
+          </div>
+
           {/* 2ª Fase */}
-          <div className="bg-primary/5 rounded-xl p-6 border border-primary/20">
-            <h3 className="text-2xl font-bold text-primary mb-4 flex items-center">
+          <div>
+            <h3 className="text-2xl font-bold text-primary mb-6 flex items-center">
               <div className="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">2</div>
               2º FASE – ENTREVISTA
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-4">
               <li className="flex items-start">
                 <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
                 <span className="text-neutral-700 dark:text-neutral-300">
