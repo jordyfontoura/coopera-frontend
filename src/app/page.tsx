@@ -23,16 +23,15 @@ export default async function HomePage() {
 
   return (
     <>
-      <section className="min-h-[calc(100dvh-4rem)] bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600 relative overflow-hidden">
+      <section className="min-h-[calc(100dvh-4rem)] relative overflow-hidden">
         <Image
           src={heroImage}
           alt="Hero image"
           layout="fill"
           objectFit="cover"
           priority
-          className="opacity-80"
+          className=""
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/60 via-blue-800/50 to-blue-700/60"></div>
         <div className="absolute inset-0 flex flex-col justify-center items-center text-neutral-50 px-8 z-10">
           <div className="text-center max-w-4xl mx-auto animate-fade-in-up">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">

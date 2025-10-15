@@ -29,13 +29,8 @@ export default async function MentoresPage() {
               tabIndex={0}
             >
               {/* Overlay com informações detalhadas */}
-              <div className="absolute inset-0 transition-all duration-500 z-10 opacity-0 hidden lg:flex group-hover:flex group-hover:opacity-100 group-focus-within:opacity-100 bg-gradient-to-br from-neutral-900/85 via-neutral-800/85 to-neutral-900/85 backdrop-blur-sm flex-col items-center px-6 py-8 space-y-4 overflow-y-auto">
+              <div className="absolute inset-0 transition-all duration-500 z-10 opacity-0 hidden lg:flex group-hover:flex group-hover:opacity-100 group-focus-within:opacity-100 bg-gradient-to-br from-neutral-900/85 via-neutral-800/85 to-neutral-900/85 backdrop-blur-sm flex-col items-center justify-center px-6 py-8 space-y-4 overflow-y-auto">
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-4">
-                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                    </svg>
-                  </div>
                   <h2 className="font-bold text-xl text-white">{mentor.nome}</h2>
                   <p className="text-md text-white/90 font-medium">{mentor.cargo}</p>
                 </div>
@@ -55,7 +50,7 @@ export default async function MentoresPage() {
               />
               
               {/* Overlay inferior com informações básicas */}
-              <div className="absolute bottom-0 w-full flex flex-col items-center justify-end bg-gradient-to-t from-neutral-900/90 via-neutral-900/60 to-transparent py-6 min-h-32 transition-all duration-300 group-focus-within:opacity-0 group-hover:opacity-0">
+              <div className="absolute bottom-0 w-full flex flex-col items-center justify-center bg-gradient-to-t from-neutral-950/95 via-neutral-950/70 to-transparent py-6 min-h-32 transition-all duration-300 group-focus-within:opacity-0 group-hover:opacity-0">
                 <div className="text-center">
                   <h2 className="font-bold text-lg text-white mb-1">{mentor.nome}</h2>
                   <p className="text-sm text-white/90 mb-2">{mentor.cargo}</p>
