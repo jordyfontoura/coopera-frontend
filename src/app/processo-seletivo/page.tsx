@@ -123,7 +123,7 @@ export default async function ProcessoSeletivoPage() {
               </li>
               <li className="flex items-start">
                 <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                <span className="text-neutral-700 dark:text-neutral-300">Interação com a sua comunidade</span>
+                <span className="text-neutral-700 dark:text-neutral-300">Interação com a sua comunidade: como você se relaciona, participa e contribui com as pessoas ao seu redor, seja no seu bairro, escola, time, ou grupo social</span>
               </li>
               <li className="flex items-start">
                 <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
