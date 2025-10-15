@@ -95,14 +95,14 @@ export default async function ProcessoSeletivoPage() {
               O atleta deverá preencher seus dados e fazer o upload do vídeo no
               formulário de seleção que ficará presente neste site e aberto somente
               durante o período do processo seletivo. Caso tenha dúvidas, entre em
-              contato conosco. Por meio do nosso instagram ou pelo link do formulário.
+              contato conosco, por meio do nosso <Link href="https://www.instagram.com/cooperaesportes" className="text-tertiary hover:text-tertiary/80 font-semibold transition-colors duration-300">Instagram</Link> ou pelo <Link href="https://forms.gle/m2J893d13624eQh58" className="text-tertiary hover:text-tertiary/80 font-semibold transition-colors duration-300">Formulário de Seleção</Link>
             </p>
           </div>
 
           {/* 1ª Fase */}
           <div className="mb-12">
-            <h3 className="text-2xl font-bold text-tertiary mb-6 flex items-center">
-              <div className="w-8 h-8 bg-tertiary text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">1</div>
+            <h3 className="text-2xl font-bold text-primary mb-6 flex items-center">
+              <div className="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">1</div>
               1º FASE – CANDIDATURA
             </h3>
             <p className="text-neutral-700 dark:text-neutral-300 mb-6">
@@ -110,23 +110,23 @@ export default async function ProcessoSeletivoPage() {
             </p>
             <ul className="space-y-3">
               <li className="flex items-start">
-                <div className="w-2 h-2 bg-tertiary rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
                 <span className="text-neutral-700 dark:text-neutral-300">Histórico familiar</span>
               </li>
               <li className="flex items-start">
-                <div className="w-2 h-2 bg-tertiary rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
                 <span className="text-neutral-700 dark:text-neutral-300">Histórico no esporte e, principalmente, histórico de vitórias</span>
               </li>
               <li className="flex items-start">
-                <div className="w-2 h-2 bg-tertiary rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
                 <span className="text-neutral-700 dark:text-neutral-300">Rotina e dia-a-dia</span>
               </li>
               <li className="flex items-start">
-                <div className="w-2 h-2 bg-tertiary rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
                 <span className="text-neutral-700 dark:text-neutral-300">Interação com a sua comunidade</span>
               </li>
               <li className="flex items-start">
-                <div className="w-2 h-2 bg-tertiary rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
                 <span className="text-neutral-700 dark:text-neutral-300">
                   Por que a Coopera Esportes deve escolher você o vencedor da bolsa?
                 </span>
