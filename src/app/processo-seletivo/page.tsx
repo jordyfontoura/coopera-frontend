@@ -95,15 +95,15 @@ export default async function ProcessoSeletivoPage() {
               O atleta deverá preencher seus dados e fazer o upload do vídeo no
               formulário de seleção que ficará presente neste site e aberto somente
               durante o período do processo seletivo. Caso tenha dúvidas, entre em
-              contato conosco, por meio do nosso <Link href="https://www.instagram.com/cooperaesportes" className="text-tertiary hover:text-tertiary/80 font-semibold transition-colors duration-300">Instagram</Link> ou pelo <Link href="https://forms.gle/m2J893d13624eQh58" className="text-tertiary hover:text-tertiary/80 font-semibold transition-colors duration-300">Formulário de Seleção</Link>
+              contato conosco, por meio do nosso <Link href="https://www.instagram.com/cooperaesportes" className="text-tertiary hover:text-tertiary/80 font-semibold transition-colors duration-300">Instagram</Link> ou pelo <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfJrMbkQOXDfMtff8gLH6RmNgB0btUvrldliE14Y5xauymb_w/viewform?usp=sf_link" className="text-tertiary hover:text-tertiary/80 font-semibold transition-colors duration-300">Formulário de Seleção</Link>
             </p>
           </div>
 
           {/* 1ª Fase */}
           <div className="mb-12">
             <h3 className="text-2xl font-bold text-primary mb-6 flex items-center">
-              <div className="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">1</div>
-              1º FASE – CANDIDATURA
+              <div className="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">1º</div>
+             FASE – CANDIDATURA
             </h3>
             <p className="text-neutral-700 dark:text-neutral-300 mb-6">
               Vídeo de 2 minutos e 30 segundos de apresentação sobre:
@@ -137,8 +137,8 @@ export default async function ProcessoSeletivoPage() {
           {/* 2ª Fase */}
           <div>
             <h3 className="text-2xl font-bold text-primary mb-6 flex items-center">
-              <div className="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">2</div>
-              2º FASE – ENTREVISTA
+              <div className="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">2º</div>
+               FASE – ENTREVISTA
             </h3>
             <ul className="space-y-4">
               <li className="flex items-start">
