@@ -37,7 +37,7 @@ export default async function BolsistasPage() {
               />
               
               {/* Overlay com informações */}
-              <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/90 via-neutral-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/95 via-neutral-950/70 to-transparent opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
               
               {/* Informações do bolsista */}
               <div className="absolute bottom-0 w-full flex flex-col items-center justify-end py-6 min-h-32 transition-all duration-300">
