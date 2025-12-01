@@ -18,7 +18,7 @@ O projeto em Next.js da Coopera Esportes é uma plataforma web desenvolvida para
 
 Para executar este projeto localmente, siga estas etapas:
 
-1. Certifique-se de ter o **Node.js (v20.11.1)** e o **npm** instalados em seu computador.
+1. Certifique-se de ter o **Node.js (v20.11.2)** e o **npm** instalados em seu computador.
 2. Clone este repositório para o seu ambiente local.
 3. No diretório raiz do projeto, execute o seguinte comando para instalar as dependências:
 
