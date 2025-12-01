@@ -40,26 +40,27 @@ export default async function ProcessoSeletivoPage() {
 
   // Lista de selecionados do processo seletivo 2026 (ordenados alfabeticamente)
   const selecionados2026 = [
-    { nome: "Bianca Cardoso Roriz", mentor: "Lucas Meneguetti" },
+    { nome: "Bianca Cardoso Roriz", mentor: "Lucas Magna" },
     { nome: "Christian Manoel Magalhaes da Silva", mentor: "Henrique Porto" },
     { nome: "Ellen Vitoria", mentor: "Marcos Rosalino" },
     { nome: "Enzo Pesso", mentor: "Henrique Porto" },
     { nome: "Gabriel Emanuel da Silva Araujo", mentor: "Estevan Taguchi" },
     { nome: "Gustavo Martins Pedrosa de Souza Santos", mentor: "Leandro Castro" },
-    { nome: "Jader Lucas Ferreira de Araújo", mentor: "Felipe" },
-    { nome: "João Emmanoel Alves Borges", mentor: "Felipe" },
+    { nome: "Jader Lucas Ferreira de Araújo", mentor: "Felipe Mendonça" },
+    { nome: "João Emmanoel Alves Borges", mentor: "Felipe Mendonça" },
     { nome: "João Gabriel Santos Alves", mentor: "João Pedro de Moraes" },
-    { nome: "Juan Schiebelbein Capri", mentor: "Lucas Meneguetti" },
-    { nome: "Kauã dos santos faria", mentor: "Gabrielle Machado" },
+    { nome: "José Felipe", mentor: "Estevan Taguchi" },
+    { nome: "Juan Schiebelbein Capri", mentor: "Lucas Magna" },
+    { nome: "Kauã dos Santos Faria", mentor: "Gabrielle Machado" },
     { nome: "Kayron Albert Epifanio Lima", mentor: "Marcos Rosalino" },
     { nome: "Letícia Martins Bezerra", mentor: "João Pedro de Moraes" },
     { nome: "Luis Felipe Bardelli Nakachi", mentor: "José Pirani" },
     { nome: "Marcelo Machado Massini", mentor: "Estevan Taguchi" },
-    { nome: "Osvaldo gabriel de melo gaspar", mentor: "Marcos Rosalino" },
-    { nome: "Sophia dos Santos Romagnoli", mentor: "Lucas Meneguetti" },
-    { nome: "Sophia Queiroz da silva", mentor: "Fabiana Goulart" },
+    { nome: "Osvaldo Gabriel de Melo Gaspar", mentor: "Marcos Rosalino" },
+    { nome: "Sophia dos Santos Romagnoli", mentor: "Lucas Magna" },
+    { nome: "Sophia Queiroz da Silva", mentor: "Fabiana Goulart" },
     { nome: "Wesley Gabriel Oliveira dos Santos", mentor: "Gabrielle Machado" },
-    { nome: "Ysaac lima de jesus", mentor: "Leandro Castro" },
+    { nome: "Ysaac Lima de Jesus", mentor: "Leandro Castro" },
   ];
 
   return (
