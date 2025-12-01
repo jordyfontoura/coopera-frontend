@@ -1,42 +1,66 @@
-import { env } from "@/config";
+// import { env } from "@/config";
 import Link from "next/link";
-import { z } from "zod";
+// import { z } from "zod";
 
-const API_PROCESSO_SELETIVO_URL = `${env.CMS_API_URL}/processo-seletivo`;
+// const API_PROCESSO_SELETIVO_URL = `${env.CMS_API_URL}/processo-seletivo`;
 
-const processoSeletivoSchema = z.object({
-  aberto: z.boolean(),
-  titulo: z.string().nullable().optional(),
-  link: z.string().nullable().optional(),
-});
+// const processoSeletivoSchema = z.object({
+//   aberto: z.boolean(),
+//   titulo: z.string().nullable().optional(),
+//   link: z.string().nullable().optional(),
+// });
 
-const cmsSchema = z.object({
-  data: z.any(),
-  meta: z.any(),
-});
+// const cmsSchema = z.object({
+//   data: z.any(),
+//   meta: z.any(),
+// });
 
 export default async function ProcessoSeletivoPage() {
-  const response = await fetch(API_PROCESSO_SELETIVO_URL, {
-    headers: {
-      Authorization: `Bearer ${env.CMS_API_TOKEN}`,
-    },
-  });
+  // const response = await fetch(API_PROCESSO_SELETIVO_URL, {
+  //   headers: {
+  //     Authorization: `Bearer ${env.CMS_API_TOKEN}`,
+  //   },
+  // });
 
-  if (!response.ok) {
-    throw new Error(
-      `Falha ao carregar processo seletivo via API ${API_PROCESSO_SELETIVO_URL}`
-    );
-  }
+  // if (!response.ok) {
+  //   throw new Error(
+  //     `Falha ao carregar processo seletivo via API ${API_PROCESSO_SELETIVO_URL}`
+  //   );
+  // }
   
-  const processoSeletivoJson = await response.json().catch(() => {
-    throw new Error(
-      `Falha ao fazer parse do JSON retornado pela API ${API_PROCESSO_SELETIVO_URL}`
-    );
-  });
+  // const processoSeletivoJson = await response.json().catch(() => {
+  //   throw new Error(
+  //     `Falha ao fazer parse do JSON retornado pela API ${API_PROCESSO_SELETIVO_URL}`
+  //   );
+  // });
 
-  const cmsJson = cmsSchema.parse(processoSeletivoJson);
-  console.log(cmsJson);
-  const processoSeletivo = processoSeletivoSchema.parse(cmsJson.data);
+  // const cmsJson = cmsSchema.parse(processoSeletivoJson);
+  // console.log(cmsJson);
+  // const processoSeletivo = processoSeletivoSchema.parse(cmsJson.data);
+
+  // Lista de selecionados do processo seletivo 2026 (ordenados alfabeticamente)
+  const selecionados2026 = [
+    { nome: "Bianca Cardoso Roriz", mentor: "Lucas" },
+    { nome: "Christian Manoel Magalhaes da Silva", mentor: "Henrique" },
+    { nome: "Ellen Vitoria", mentor: "Marcos" },
+    { nome: "Enzo Pesso", mentor: "Henrique" },
+    { nome: "Gabriel Emanuel da Silva Araujo", mentor: "Estevan" },
+    { nome: "Gustavo Martins Pedrosa de Souza Santos", mentor: "Leandro" },
+    { nome: "Jader Lucas Ferreira de Araújo", mentor: "Felipe" },
+    { nome: "João Emmanoel Alves Borges", mentor: "Felipe" },
+    { nome: "João Gabriel Santos Alves", mentor: "JP" },
+    { nome: "Juan Schiebelbein Capri", mentor: "Lucas" },
+    { nome: "Kauã dos santos faria", mentor: "Gabrielle Machado" },
+    { nome: "Kayron Albert Epifanio Lima", mentor: "Marcos" },
+    { nome: "Letícia Martins Bezerra", mentor: "JP" },
+    { nome: "Luis Felipe Bardelli Nakachi", mentor: "Pirani" },
+    { nome: "Marcelo Machado Massini", mentor: "Estevan" },
+    { nome: "Osvaldo gabriel de melo gaspar", mentor: "Marcos" },
+    { nome: "Sophia dos Santos Romagnoli", mentor: "Lucas" },
+    { nome: "Sophia Queiroz da silva", mentor: "Fabiana Goulart" },
+    { nome: "Wesley Gabriel Oliveira dos Santos", mentor: "Gabrielle Machado" },
+    { nome: "Ysaac lima de jesus", mentor: "Leandro" },
+  ];
 
   return (
     <main className="px-8 py-24 text-lg max-w-7xl mx-auto">
@@ -162,43 +186,28 @@ export default async function ProcessoSeletivoPage() {
         </div>
       </section>
 
-      {/* Processo Aberto */}
-      {processoSeletivo.aberto ? (
-        <section className="mb-16">
-          <div className="bg-gradient-to-br from-tertiary/10 to-orange-100/50 dark:from-tertiary/10 dark:to-orange-900/20 rounded-2xl p-8 border border-tertiary/20 text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-6">
-              Processo Seletivo Aberto!
-            </h2>
-            {processoSeletivo.titulo ? (
-              <p className="text-lg text-neutral-700 dark:text-neutral-300 mb-8">{processoSeletivo.titulo}</p>
-            ) : null}
-            {processoSeletivo.link ? (
-              <Link
-                href={processoSeletivo.link}
-                className="inline-flex items-center gap-3 bg-tertiary hover:bg-tertiary/90 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 transform shadow-lg hover:shadow-xl"
-                target="_blank"
+      {/* Resultado Processo Seletivo */}
+      <section className="mb-16">
+        <div className="bg-white dark:bg-neutral-900 rounded-2xl p-8 shadow-lg border border-neutral-200 dark:border-neutral-700">
+          <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-8 text-center">
+            Resultado Processo Seletivo 2026
+          </h2>
+          
+          <div className="space-y-3">
+            {selecionados2026.map((selecionado, index) => (
+              <div 
+                key={index}
+                className="py-3 px-4 border-b border-neutral-200 dark:border-neutral-700 last:border-b-0 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors duration-200 rounded-lg"
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-                Clique aqui para participar
-              </Link>
-            ) : null}
+                <div className="text-lg text-neutral-700 dark:text-neutral-300">
+                  <div>{selecionado.nome}</div>
+                  <div>Mentor - {selecionado.mentor}</div>
+                </div>
+              </div>
+            ))}
           </div>
-        </section>
-      ) : (
-        <section className="mb-16">
-          <div className="bg-gradient-to-br from-neutral-100 to-neutral-200 dark:from-neutral-800 dark:to-neutral-700 rounded-2xl p-8 border border-neutral-300 dark:border-neutral-600 text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-neutral-600 dark:text-neutral-400 mb-6">
-              Processo Seletivo Fechado
-            </h2>
-            <p className="text-lg text-neutral-600 dark:text-neutral-400 mb-6">
-              O processo seletivo não está aberto no momento. Acompanhe nossas redes sociais para ficar por dentro das próximas oportunidades.
-            </p>
-            <div className="w-20 h-1 bg-neutral-400 mx-auto rounded-full"></div>
-          </div>
-        </section>
-      )}
+        </div>
+      </section>
     </main>
   );
 }
